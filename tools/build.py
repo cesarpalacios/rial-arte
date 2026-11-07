@@ -344,6 +344,9 @@ def main():
         d = prod_dir / p["slug"]
         d.mkdir(parents=True)
         (d / "index.html").write_text(pagina_producto(site, p, productos), encoding="utf-8")
+    fotos = [{"n": p["nombre"], "s": p["slug"], "img": f"assets/img/{f}-l.jpg"}
+             for p in productos for f in p["fotos"]]
+    (DOCS / "fotos.json").write_text(json.dumps(fotos, ensure_ascii=False), encoding="utf-8")
     (DOCS / "sitemap.xml").write_text(sitemap(site, productos), encoding="utf-8")
     (DOCS / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {site['url_base']}sitemap.xml\n")
     (DOCS / ".nojekyll").write_text("")

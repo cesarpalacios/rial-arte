@@ -35,4 +35,5 @@ cd docs && python3 -m http.server 8000   # http://localhost:8000
 ## Publicación
 
 - **GitHub Pages**: Settings → Pages → rama `main`, carpeta `/docs`.
+- **Vista previa aleatoria**: ver `worker/PUBLICAR.md`.
 - **Google Sites**: Insertar → Insertar con código/Insertar desde la Web → URL de GitHub Pages (ver guía en `GOOGLE-SITES.md`).
