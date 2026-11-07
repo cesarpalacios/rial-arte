@@ -5,8 +5,17 @@
     "categoria": "Ropa tejida",
     "resumen": "Abrigo largo tejido a mano en franjas de colores cálidos, con capucha y botones de madera.",
     "descripcion": "Una pieza única: franjas en mostaza, terracota, crema y negro con destellos de color, rematadas en café con capucha y botones grandes. Cálido, largo y con mucha personalidad.",
-    "detalles": ["Tejido a mano, pieza única", "Capucha y cierre de botones", "Largo a media pierna"],
-    "fotos": ["DSC_5817", "DSC_5815", "DSC_5819", "DSC_5820"],
+    "detalles": [
+      "Tejido a mano, pieza única",
+      "Capucha y cierre de botones",
+      "Largo a media pierna"
+    ],
+    "fotos": [
+      "DSC_5817",
+      "DSC_5815",
+      "DSC_5819",
+      "DSC_5820"
+    ],
     "destacado": true
   },
   {
@@ -15,8 +24,16 @@
     "categoria": "Ropa tejida",
     "resumen": "Chaleco crema con cuello en V y diseño calado, fresco y elegante.",
     "descripcion": "Chaleco abotonado en punto calado color crema, con cuello en V y borde festoneado. Ligero para combinar con todo, de día o de noche.",
-    "detalles": ["Tejido a mano en crochet", "Cuello en V con botones", "Punto calado y borde festoneado"],
-    "fotos": ["DSC_5803", "DSC_5805", "DSC_5813"],
+    "detalles": [
+      "Tejido a mano en crochet",
+      "Cuello en V con botones",
+      "Punto calado y borde festoneado"
+    ],
+    "fotos": [
+      "DSC_5803",
+      "DSC_5805",
+      "DSC_5813"
+    ],
     "destacado": true
   },
   {
@@ -25,8 +42,16 @@
     "categoria": "Ropa tejida",
     "resumen": "Cárdigan blanco de manga larga con textura en relieve y aberturas laterales.",
     "descripcion": "Cárdigan abierto en hilo blanco con textura en relieve y pequeñas aberturas laterales. Un básico atemporal tejido con detalle.",
-    "detalles": ["Tejido a mano", "Manga larga", "Aberturas laterales"],
-    "fotos": ["DSC_5823", "DSC_5825", "DSC_5827"]
+    "detalles": [
+      "Tejido a mano",
+      "Manga larga",
+      "Aberturas laterales"
+    ],
+    "fotos": [
+      "DSC_5823",
+      "DSC_5825",
+      "DSC_5827"
+    ]
   },
   {
     "slug": "conjunto-de-bebe-tejido",
@@ -34,8 +59,14 @@
     "categoria": "Ropa tejida",
     "resumen": "Ajuar tejido para recién nacido: gorrito, chaqueta y accesorios con lazos de satín.",
     "descripcion": "Delicado ajuar tejido a mano en blanco con detalles calados y lazos de satín rosado. Ideal para regalo de nacimiento o para la primera foto.",
-    "detalles": ["Tejido a mano", "Detalles calados y lazos de satín", "Ideal para regalo"],
-    "fotos": ["Bebe"]
+    "detalles": [
+      "Tejido a mano",
+      "Detalles calados y lazos de satín",
+      "Ideal para regalo"
+    ],
+    "fotos": [
+      "Bebe"
+    ]
   },
   {
     "slug": "toalla-bordada-zigzag-arcoiris",
@@ -43,8 +74,16 @@
     "categoria": "Hogar",
     "resumen": "Toalla blanca con bordado en punto zigzag de colores y encaje.",
     "descripcion": "Toalla de mano con una cinta bordada en zigzag de colores vibrantes y bordes con encaje. Convierte el baño en un espacio con carácter, o regálala como detalle especial.",
-    "detalles": ["Bordado a mano", "Cinta en zigzag multicolor", "Perfecta para regalo"],
-    "fotos": ["DSC_5836", "DSC_5832", "DSC_5839"],
+    "detalles": [
+      "Bordado a mano",
+      "Cinta en zigzag multicolor",
+      "Perfecta para regalo"
+    ],
+    "fotos": [
+      "DSC_5836",
+      "DSC_5832",
+      "DSC_5839"
+    ],
     "destacado": true
   },
   {
@@ -53,8 +92,15 @@
     "categoria": "Hogar",
     "resumen": "Toalla con guirnalda de flores bordada, encaje y moño de cinta color durazno.",
     "descripcion": "Guirnalda de florecitas bordadas en tonos verdes y rosados, acompañada de encaje y un moño de cinta color durazno. Romántica y delicada.",
-    "detalles": ["Bordado a mano", "Encaje y moño de cinta", "Perfecta para regalo"],
-    "fotos": ["DSC_5842", "DSC_5843"]
+    "detalles": [
+      "Bordado a mano",
+      "Encaje y moño de cinta",
+      "Perfecta para regalo"
+    ],
+    "fotos": [
+      "DSC_5842",
+      "DSC_5843"
+    ]
   },
   {
     "slug": "toalla-bordada-flores-rojas",
@@ -62,8 +108,16 @@
     "categoria": "Hogar",
     "resumen": "Toalla crema con cinta de flores rojas bordadas en punto cruz.",
     "descripcion": "Cinta de flores rojas y negras bordadas en punto cruz sobre toalla color crema. Inspiración tradicional con acabado cuidadoso.",
-    "detalles": ["Bordado a mano en punto cruz", "Toalla color crema", "Perfecta para regalo"],
-    "fotos": ["DSC_5846", "DSC_5848", "DSC_5850"]
+    "detalles": [
+      "Bordado a mano en punto cruz",
+      "Toalla color crema",
+      "Perfecta para regalo"
+    ],
+    "fotos": [
+      "DSC_5846",
+      "DSC_5848",
+      "DSC_5850"
+    ]
   },
   {
     "slug": "cojin-bordado-dama-antigua",
@@ -71,18 +125,16 @@
     "categoria": "Hogar",
     "resumen": "Cojín blanco con dama bordada, vestido tejido en crochet y volante de encaje.",
     "descripcion": "Una dama con sombrero y ramo de flores, con vestido tejido en crochet y detalles bordados, sobre un cojín con volante y borde de encaje. Una pieza de decoración con aire clásico.",
-    "detalles": ["Bordado y crochet a mano", "Volante con borde de encaje", "Decoración y regalo"],
-    "fotos": ["DSC_5873", "DSC_5874"],
+    "detalles": [
+      "Bordado y crochet a mano",
+      "Volante con borde de encaje",
+      "Decoración y regalo"
+    ],
+    "fotos": [
+      "DSC_5873",
+      "DSC_5874"
+    ],
     "destacado": true
-  },
-  {
-    "slug": "gorro-muneco-de-nieve",
-    "nombre": "Gorro muñeco de nieve",
-    "categoria": "Navidad",
-    "resumen": "Gorro tejido con cara de muñeco de nieve, orejeras y trenzas.",
-    "descripcion": "Gorro divertido con carita de muñeco de nieve, sombrero negro, nariz de zanahoria, orejeras y trenzas con borlas. Abriga y saca sonrisas.",
-    "detalles": ["Tejido a mano en crochet", "Con orejeras y trenzas", "Edición navideña"],
-    "fotos": ["DSC_5862", "DSC_5864", "DSC_5866"]
   },
   {
     "slug": "gorros-papa-noel",
@@ -90,17 +142,15 @@
     "categoria": "Navidad",
     "resumen": "Gorros rojos tejidos con aplique de Papá Noel, en punto trenzado y en espiga.",
     "descripcion": "Gorros tejidos en rojo intenso con un tierno Papá Noel de crochet aplicado. Disponibles con pompón o en versión clásica.",
-    "detalles": ["Tejidos a mano", "Aplique de Papá Noel en crochet", "Edición navideña"],
-    "fotos": ["DSC_5856", "DSC_5859"]
-  },
-  {
-    "slug": "llaveros-navidenos",
-    "nombre": "Llaveros navideños",
-    "categoria": "Navidad",
-    "resumen": "Llaveros de crochet: Papá Noel y muñeco de nieve.",
-    "descripcion": "Pequeños personajes navideños tejidos a mano en crochet, listos para colgar en llaves o bolso. El detalle perfecto para amigo secreto o para regalar a todos.",
-    "detalles": ["Crochet a mano", "Argolla metálica", "Ideales para regalo"],
-    "fotos": ["DSC_5876", "DSC_5878"]
+    "detalles": [
+      "Tejidos a mano",
+      "Aplique de Papá Noel en crochet",
+      "Edición navideña"
+    ],
+    "fotos": [
+      "DSC_5856",
+      "DSC_5859"
+    ]
   },
   {
     "slug": "llaveros-renos-y-munecos",
@@ -108,17 +158,15 @@
     "categoria": "Navidad",
     "resumen": "Llaveros de renos y muñecos de nieve con bufanda.",
     "descripcion": "Renos con nariz roja y muñecos de nieve con bufandas, tejidos en crochet. Cada uno con su carácter.",
-    "detalles": ["Crochet a mano", "Argolla metálica", "Ideales para regalo"],
-    "fotos": ["DSC_5883", "DSC_5885"]
-  },
-  {
-    "slug": "broches-papa-noel",
-    "nombre": "Broches Papá Noel",
-    "categoria": "Navidad",
-    "resumen": "Broches de Papá Noel tejidos a mano, con gorro rojo o verde.",
-    "descripcion": "Papá Noel de crochet con barba de textura suave y gorro rojo o verde, en formato de broche para solapa, chaqueta o bolso.",
-    "detalles": ["Crochet a mano", "Con gancho de seguridad", "Edición navideña"],
-    "fotos": ["DSC_5879", "DSC_5881"]
+    "detalles": [
+      "Crochet a mano",
+      "Argolla metálica",
+      "Ideales para regalo"
+    ],
+    "fotos": [
+      "DSC_5883",
+      "DSC_5885"
+    ]
   },
   {
     "slug": "metros-tejidos-de-colores",
@@ -126,8 +174,15 @@
     "categoria": "Accesorios",
     "resumen": "Cintas métricas forradas en crochet con diseño de mandala.",
     "descripcion": "Cinta métrica forrada en crochet con un diseño floral tipo mandala. Útil y bonita para quienes cosen o tejen.",
-    "detalles": ["Crochet a mano", "Cinta métrica incluida", "Ideal para costureras y tejedoras"],
-    "fotos": ["DSC_5852", "DSC_5854"]
+    "detalles": [
+      "Crochet a mano",
+      "Cinta métrica incluida",
+      "Ideal para costureras y tejedoras"
+    ],
+    "fotos": [
+      "DSC_5852",
+      "DSC_5854"
+    ]
   },
   {
     "slug": "guantes-negros-tejidos",
@@ -135,8 +190,15 @@
     "categoria": "Accesorios",
     "resumen": "Guantes negros tejidos a mano, cómodos y abrigados.",
     "descripcion": "Guantes sobrios en negro con ajuste cómodo. Combinan con cualquier abrigo y mantienen las manos calientes.",
-    "detalles": ["Tejidos a mano", "Color negro", "Consulta tallas por WhatsApp"],
-    "fotos": ["DSC_5868", "DSC_5871"]
+    "detalles": [
+      "Tejidos a mano",
+      "Color negro",
+      "Consulta tallas por WhatsApp"
+    ],
+    "fotos": [
+      "DSC_5868",
+      "DSC_5871"
+    ]
   },
   {
     "slug": "amigurumi-osos-y-conejo",
@@ -144,8 +206,14 @@
     "categoria": "Accesorios",
     "resumen": "Osos y conejo tejidos en amigurumi, con borla larga.",
     "descripcion": "Cabecitas de osos y conejo tejidas en amigurumi, con borlas largas para colgar de llaves, bolso o mochila.",
-    "detalles": ["Amigurumi tejido a mano", "Con borla", "Varios colores"],
-    "fotos": ["Ositos"]
+    "detalles": [
+      "Amigurumi tejido a mano",
+      "Con borla",
+      "Varios colores"
+    ],
+    "fotos": [
+      "Ositos"
+    ]
   },
   {
     "slug": "conejo-amigurumi-con-zanahoria",
@@ -153,7 +221,13 @@
     "categoria": "Accesorios",
     "resumen": "Llavero de conejo en amigurumi, con zanahoria de crochet y borla roja.",
     "descripcion": "Tierno conejo de orejas largas con su zanahoria de crochet y una borla roja. Un detalle muy fácil de querer.",
-    "detalles": ["Amigurumi tejido a mano", "Zanahoria de crochet", "Con borla"],
-    "fotos": ["Conejo"]
+    "detalles": [
+      "Amigurumi tejido a mano",
+      "Zanahoria de crochet",
+      "Con borla"
+    ],
+    "fotos": [
+      "Conejo"
+    ]
   }
 ]
