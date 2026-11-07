@@ -1,0 +1,80 @@
+@page { size: A4; margin: 0; }
+:root { --navy:#1f2a5a; --gold:#e8b838; --gold-soft:#f6e6b4; --cream:#fbf7ef; --ink:#232738; --muted:#666b80; --line:#e9e2d2; --wa:#1fa855;
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Jost",system-ui,sans-serif; }
+* { box-sizing:border-box; margin:0; padding:0; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+html,body { background:#fff; font-family:var(--sans); color:var(--ink); }
+a { color:inherit; text-decoration:none; }
+.page { width:210mm; height:297mm; overflow:hidden; position:relative; page-break-after:always; break-after:page; background:var(--cream); }
+h1,h2,h3 { font-family:var(--serif); color:var(--navy); font-weight:600; line-height:1.1; }
+em { color:#c99a1c; font-style:italic; }
+.eyebrow { text-transform:uppercase; letter-spacing:.2em; font-size:8.5pt; font-weight:600; color:#a67f12; margin-bottom:3mm; }
+
+/* Portada */
+.cover { background:radial-gradient(circle at 80% 8%, var(--gold-soft), var(--cream) 55%); }
+.cv-arts { position:absolute; inset:0 0 auto 0; height:150mm; }
+.arch { position:absolute; overflow:hidden; border:2.2mm solid #fff; box-shadow:0 3mm 8mm rgba(31,42,90,.18); background:#fff; }
+.arch img { width:100%; height:100%; object-fit:cover; }
+.a1 { left:14mm; top:22mm; width:84mm; height:118mm; border-radius:42mm 42mm 6mm 6mm; }
+.a2 { right:14mm; top:12mm; width:78mm; height:70mm; border-radius:39mm 39mm 6mm 6mm; }
+.a3 { right:24mm; top:88mm; width:70mm; height:56mm; border-radius:6mm; }
+.cv-text { position:absolute; left:0; right:0; top:156mm; text-align:center; padding:0 20mm; }
+.cv-logo { width:34mm; margin:0 auto 4mm; display:block; }
+.cv-text h1 { font-size:40pt; margin:2mm 0 4mm; }
+.lead { font-size:12pt; color:var(--muted); letter-spacing:.08em; margin-bottom:7mm; }
+.btn { display:inline-block; background:var(--wa); color:#fff; font-weight:600; font-size:11pt; padding:4mm 9mm; border-radius:20mm; }
+.btn.big { font-size:15pt; padding:6mm 14mm; }
+.loc { margin-top:6mm; font-size:10pt; color:var(--muted); }
+
+/* Cabeceras y pies */
+.ph-head { display:flex; justify-content:space-between; align-items:flex-end; padding:14mm 16mm 5mm; }
+.ph-head h2 { font-size:30pt; }
+.sub { color:var(--muted); font-size:10.5pt; margin-top:1.5mm; }
+.mini { width:20mm; }
+.pie { position:absolute; left:16mm; right:16mm; bottom:7mm; display:flex; justify-content:space-between; font-size:8pt; color:var(--muted); border-top:.3mm solid var(--line); padding-top:2.5mm; }
+
+/* Sobre mí */
+.ab-body { display:flex; gap:10mm; padding:4mm 16mm 0; }
+.ab-photo { width:70mm; flex:none; }
+.ab-photo img { width:100%; height:100mm; object-fit:cover; border-radius:35mm 35mm 5mm 5mm; box-shadow:0 2mm 7mm rgba(31,42,90,.2); }
+.ab-text p { font-size:10.5pt; line-height:1.6; margin-bottom:3.5mm; color:#3a3f55; }
+blockquote { font-family:var(--serif); font-style:italic; font-size:17pt; color:var(--navy); border-left:1mm solid var(--gold); padding:1mm 0 1mm 5mm; margin-top:5mm; }
+.strip { display:flex; gap:8mm; padding:10mm 16mm 0; }
+.strip figure { flex:1; position:relative; border-radius:4mm; overflow:hidden; height:88mm; box-shadow:0 1.5mm 5mm rgba(31,42,90,.15); }
+.strip img { width:100%; height:100%; object-fit:cover; }
+.strip figcaption { position:absolute; left:0; right:0; bottom:0; color:#fff; font-size:9pt; padding:8mm 4mm 3mm; background:linear-gradient(transparent, rgba(20,25,55,.75)); }
+
+/* Catálogo */
+.cat .grid { position:absolute; left:16mm; right:16mm; top:44mm; bottom:18mm; display:grid; gap:5mm; grid-auto-rows:1fr; }
+.cols2 .grid { grid-template-columns:1fr 1fr; }
+.cols3 .grid { grid-template-columns:1fr 1fr 1fr; gap:4.5mm; }
+.card { display:flex; flex-direction:column; background:#fff; border-radius:4mm; overflow:hidden; box-shadow:0 1mm 4mm rgba(31,42,90,.12); min-height:0; }
+.ph { flex:1; min-height:0; background:#f1ece0; position:relative; }
+.ph img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.card.vert .ph img { object-fit:contain; }
+.tx { padding:3mm 4mm 3.5mm; }
+.chip { display:inline-block; background:var(--gold-soft); color:#7a5a06; font-size:6.5pt; font-weight:600; letter-spacing:.07em; text-transform:uppercase; padding:.7mm 2.4mm; border-radius:5mm; margin-bottom:1.5mm; }
+.card h3 { font-size:13pt; margin-bottom:1mm; }
+.cols3 .card h3 { font-size:11pt; }
+.card p { font-size:8.5pt; color:var(--muted); line-height:1.35; margin-bottom:1.8mm; }
+.cols3 .card p { font-size:7.5pt; }
+.ask { font-size:8pt; font-weight:600; color:var(--wa); }
+.tile { border-radius:4mm; padding:6mm; display:flex; flex-direction:column; justify-content:center; text-align:center; gap:2.5mm; }
+.tile b { font-family:var(--serif); font-size:17pt; line-height:1.1; }
+.tile span { font-size:9pt; line-height:1.4; }
+.tile u { font-size:9pt; font-weight:600; text-decoration:none; margin-top:1mm; }
+.tile.gold { background:linear-gradient(135deg,var(--gold),var(--gold-soft)); color:var(--navy); }
+.tile.gold b { color:var(--navy); }
+.tile.navy { background:var(--navy); color:#fff; }
+.tile.navy b { color:#fff; } .tile.navy u { color:var(--gold); }
+
+/* Cierre */
+.closing { text-align:center; padding:30mm 22mm 0; background:radial-gradient(circle at 20% 90%, var(--gold-soft), var(--cream) 60%); }
+.closing h2 { font-size:34pt; margin:4mm 0 12mm; }
+.steps { list-style:none; display:flex; gap:6mm; margin-bottom:14mm; text-align:left; }
+.steps li { flex:1; background:#fff; border-radius:4mm; padding:6mm; box-shadow:0 1mm 4mm rgba(31,42,90,.12); }
+.steps b { display:flex; align-items:center; justify-content:center; width:10mm; height:10mm; border-radius:50%; background:var(--navy); color:var(--gold); font-family:var(--serif); font-size:15pt; margin-bottom:3mm; }
+.steps h3 { font-size:16pt; margin-bottom:1.5mm; }
+.steps p { font-size:9.5pt; color:var(--muted); line-height:1.45; }
+.contact { margin-top:14mm; font-size:11pt; line-height:1.9; color:#3a3f55; }
+.contact a { color:var(--navy); font-weight:600; }
+.thanks { margin-top:12mm; font-family:var(--serif); font-style:italic; font-size:19pt; color:var(--navy); }

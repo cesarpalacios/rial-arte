@@ -212,3 +212,4 @@ h1 { overflow-wrap: break-word; }
 .video-play:hover { background: var(--navy); transform: translate(-50%, -50%) scale(1.08); }
 .video-wrap.playing .video-play { display: none; }
 @media (max-width: 480px) { .video-frame { padding: 5px; border-radius: 22px; } .video-wrap { border-radius: 17px; } .video-play { width: 64px; height: 64px; } }
+.btn-sm { padding: 10px 20px; font-size: .92rem; margin-top: 6px; }

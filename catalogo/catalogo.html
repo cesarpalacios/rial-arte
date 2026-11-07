@@ -1,0 +1,220 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Catálogo Rial Arte</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>@page { size: A4; margin: 0; }
+:root { --navy:#1f2a5a; --gold:#e8b838; --gold-soft:#f6e6b4; --cream:#fbf7ef; --ink:#232738; --muted:#666b80; --line:#e9e2d2; --wa:#1fa855;
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Jost",system-ui,sans-serif; }
+* { box-sizing:border-box; margin:0; padding:0; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+html,body { background:#fff; font-family:var(--sans); color:var(--ink); }
+a { color:inherit; text-decoration:none; }
+.page { width:210mm; height:297mm; overflow:hidden; position:relative; page-break-after:always; break-after:page; background:var(--cream); }
+h1,h2,h3 { font-family:var(--serif); color:var(--navy); font-weight:600; line-height:1.1; }
+em { color:#c99a1c; font-style:italic; }
+.eyebrow { text-transform:uppercase; letter-spacing:.2em; font-size:8.5pt; font-weight:600; color:#a67f12; margin-bottom:3mm; }
+
+/* Portada */
+.cover { background:radial-gradient(circle at 80% 8%, var(--gold-soft), var(--cream) 55%); }
+.cv-arts { position:absolute; inset:0 0 auto 0; height:150mm; }
+.arch { position:absolute; overflow:hidden; border:2.2mm solid #fff; box-shadow:0 3mm 8mm rgba(31,42,90,.18); background:#fff; }
+.arch img { width:100%; height:100%; object-fit:cover; }
+.a1 { left:14mm; top:22mm; width:84mm; height:118mm; border-radius:42mm 42mm 6mm 6mm; }
+.a2 { right:14mm; top:12mm; width:78mm; height:70mm; border-radius:39mm 39mm 6mm 6mm; }
+.a3 { right:24mm; top:88mm; width:70mm; height:56mm; border-radius:6mm; }
+.cv-text { position:absolute; left:0; right:0; top:156mm; text-align:center; padding:0 20mm; }
+.cv-logo { width:34mm; margin:0 auto 4mm; display:block; }
+.cv-text h1 { font-size:40pt; margin:2mm 0 4mm; }
+.lead { font-size:12pt; color:var(--muted); letter-spacing:.08em; margin-bottom:7mm; }
+.btn { display:inline-block; background:var(--wa); color:#fff; font-weight:600; font-size:11pt; padding:4mm 9mm; border-radius:20mm; }
+.btn.big { font-size:15pt; padding:6mm 14mm; }
+.loc { margin-top:6mm; font-size:10pt; color:var(--muted); }
+
+/* Cabeceras y pies */
+.ph-head { display:flex; justify-content:space-between; align-items:flex-end; padding:14mm 16mm 5mm; }
+.ph-head h2 { font-size:30pt; }
+.sub { color:var(--muted); font-size:10.5pt; margin-top:1.5mm; }
+.mini { width:20mm; }
+.pie { position:absolute; left:16mm; right:16mm; bottom:7mm; display:flex; justify-content:space-between; font-size:8pt; color:var(--muted); border-top:.3mm solid var(--line); padding-top:2.5mm; }
+
+/* Sobre mí */
+.ab-body { display:flex; gap:10mm; padding:4mm 16mm 0; }
+.ab-photo { width:70mm; flex:none; }
+.ab-photo img { width:100%; height:100mm; object-fit:cover; border-radius:35mm 35mm 5mm 5mm; box-shadow:0 2mm 7mm rgba(31,42,90,.2); }
+.ab-text p { font-size:10.5pt; line-height:1.6; margin-bottom:3.5mm; color:#3a3f55; }
+blockquote { font-family:var(--serif); font-style:italic; font-size:17pt; color:var(--navy); border-left:1mm solid var(--gold); padding:1mm 0 1mm 5mm; margin-top:5mm; }
+.strip { display:flex; gap:8mm; padding:10mm 16mm 0; }
+.strip figure { flex:1; position:relative; border-radius:4mm; overflow:hidden; height:88mm; box-shadow:0 1.5mm 5mm rgba(31,42,90,.15); }
+.strip img { width:100%; height:100%; object-fit:cover; }
+.strip figcaption { position:absolute; left:0; right:0; bottom:0; color:#fff; font-size:9pt; padding:8mm 4mm 3mm; background:linear-gradient(transparent, rgba(20,25,55,.75)); }
+
+/* Catálogo */
+.cat .grid { position:absolute; left:16mm; right:16mm; top:44mm; bottom:18mm; display:grid; gap:5mm; grid-auto-rows:1fr; }
+.cols2 .grid { grid-template-columns:1fr 1fr; }
+.cols3 .grid { grid-template-columns:1fr 1fr 1fr; gap:4.5mm; }
+.card { display:flex; flex-direction:column; background:#fff; border-radius:4mm; overflow:hidden; box-shadow:0 1mm 4mm rgba(31,42,90,.12); min-height:0; }
+.ph { flex:1; min-height:0; background:#f1ece0; position:relative; }
+.ph img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.card.vert .ph img { object-fit:contain; }
+.tx { padding:3mm 4mm 3.5mm; }
+.chip { display:inline-block; background:var(--gold-soft); color:#7a5a06; font-size:6.5pt; font-weight:600; letter-spacing:.07em; text-transform:uppercase; padding:.7mm 2.4mm; border-radius:5mm; margin-bottom:1.5mm; }
+.card h3 { font-size:13pt; margin-bottom:1mm; }
+.cols3 .card h3 { font-size:11pt; }
+.card p { font-size:8.5pt; color:var(--muted); line-height:1.35; margin-bottom:1.8mm; }
+.cols3 .card p { font-size:7.5pt; }
+.ask { font-size:8pt; font-weight:600; color:var(--wa); }
+.tile { border-radius:4mm; padding:6mm; display:flex; flex-direction:column; justify-content:center; text-align:center; gap:2.5mm; }
+.tile b { font-family:var(--serif); font-size:17pt; line-height:1.1; }
+.tile span { font-size:9pt; line-height:1.4; }
+.tile u { font-size:9pt; font-weight:600; text-decoration:none; margin-top:1mm; }
+.tile.gold { background:linear-gradient(135deg,var(--gold),var(--gold-soft)); color:var(--navy); }
+.tile.gold b { color:var(--navy); }
+.tile.navy { background:var(--navy); color:#fff; }
+.tile.navy b { color:#fff; } .tile.navy u { color:var(--gold); }
+
+/* Cierre */
+.closing { text-align:center; padding:30mm 22mm 0; background:radial-gradient(circle at 20% 90%, var(--gold-soft), var(--cream) 60%); }
+.closing h2 { font-size:34pt; margin:4mm 0 12mm; }
+.steps { list-style:none; display:flex; gap:6mm; margin-bottom:14mm; text-align:left; }
+.steps li { flex:1; background:#fff; border-radius:4mm; padding:6mm; box-shadow:0 1mm 4mm rgba(31,42,90,.12); }
+.steps b { display:flex; align-items:center; justify-content:center; width:10mm; height:10mm; border-radius:50%; background:var(--navy); color:var(--gold); font-family:var(--serif); font-size:15pt; margin-bottom:3mm; }
+.steps h3 { font-size:16pt; margin-bottom:1.5mm; }
+.steps p { font-size:9.5pt; color:var(--muted); line-height:1.45; }
+.contact { margin-top:14mm; font-size:11pt; line-height:1.9; color:#3a3f55; }
+.contact a { color:var(--navy); font-weight:600; }
+.thanks { margin-top:12mm; font-family:var(--serif); font-style:italic; font-size:19pt; color:var(--navy); }
+</style></head><body><section class="page cover">
+  <div class="cv-arts">
+    <div class="arch a1"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/DSC_5817-l.jpg" alt=""></div>
+    <div class="arch a2"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/DSC_5803-l.jpg" alt=""></div>
+    <div class="arch a3"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/DSC_5836-l.jpg" alt=""></div>
+  </div>
+  <div class="cv-text">
+    <img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/logo.png" alt="Rial Arte" class="cv-logo">
+    <p class="eyebrow">Catálogo digital · 2026</p>
+    <h1>Hecho a mano,<br><em>puntada a puntada</em></h1>
+    <p class="lead">Tejido · Crochet · Bordado · Bisutería</p>
+    <a class="btn" href="https://wa.me/573115477958?text=Hola%2C%20vi%20el%20cat%C3%A1logo%20de%20Rial%20Arte%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n.">Escríbenos por WhatsApp · +57 311 547 7958</a>
+    <p class="loc">Sogamoso, Boyacá</p>
+  </div></section><section class="page about">
+  <header class="ph-head"><div><p class="eyebrow">Sobre mí</p><h2>Rosa Irlanda Alarcón Laverde</h2></div>
+  <img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/logo.png" alt="" class="mini"></header>
+  <div class="ab-body">
+    <div class="ab-photo"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/sobre-mi.jpg" alt=""></div>
+    <div class="ab-text"><p>Toda su vida ha estado entre hilos y agujas. Rosa Irlanda ha dedicado su vida a tejer y a enseñar a tejer, y su conocimiento y sus manos son, en palabras de quienes trabajan con ella, “nuestra riqueza más grande”.</p><p>Ha trabajado junto a las tejedoras de Priah Heritage, una marca colombiana de tejido hecho a mano, donde la llaman “el alma de Priah”.</p><p>Además de tejer, elabora bisutería —aretes en crochet, chaquira y macramé—, con técnicas aprendidas en la Fundación Internacional María Luisa de Moreno, que impulsa la formación para el emprendimiento.</p><p>Rial Arte es su taller propio: chalecos, abrigos, toallas bordadas, cojines y llaveros, cada uno hecho puntada a puntada, con la paciencia y el cariño de toda una vida tejiendo.</p><blockquote>“Cada puntada lleva un pedacito de mi historia.”</blockquote></div>
+  </div>
+  <div class="strip"><figure><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/momento-hilando-lana-m.jpg" alt=""><figcaption>Hilando lana</figcaption></figure><figure><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/momento-crochet-blanco-m.jpg" alt=""><figcaption>Tejiendo a crochet</figcaption></figure></div>
+  <footer class="pie"><span>Rial Arte · +57 311 547 7958</span><span>2</span></footer></section><section class="page cat cols2">
+  <header class="ph-head"><div><p class="eyebrow">Catálogo</p><h2>Ropa tejida</h2><p class="sub">Prendas únicas tejidas a mano</p></div>
+  <img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/logo.png" alt="" class="mini"></header>
+  <div class="grid"><a class="card vert" href="https://wa.me/573115477958?text=Hola%2C%20estoy%20interesado%20en%20este%20producto%20de%20Rial%20Arte%3A%20Abrigo%20multicolor%20con%20capucha.%20%C2%BFMe%20das%20m%C3%A1s%20informaci%C3%B3n%3F%20https%3A//cesarpalacios.github.io/rial-arte/producto/abrigo-multicolor-con-capucha/">
+  <div class="ph"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/DSC_5817-m.jpg" alt=""></div>
+  <div class="tx"><span class="chip">Ropa tejida</span>
+  <h3>Abrigo multicolor con capucha</h3><p>Abrigo largo tejido a mano en franjas de colores cálidos, con capucha y botones de madera.</p>
+  <span class="ask">Pedir por WhatsApp →</span></div></a><a class="card" href="https://wa.me/573115477958?text=Hola%2C%20estoy%20interesado%20en%20este%20producto%20de%20Rial%20Arte%3A%20Chaleco%20calado%20en%20crochet.%20%C2%BFMe%20das%20m%C3%A1s%20informaci%C3%B3n%3F%20https%3A//cesarpalacios.github.io/rial-arte/producto/chaleco-crochet-crema/">
+  <div class="ph"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/DSC_5803-m.jpg" alt=""></div>
+  <div class="tx"><span class="chip">Ropa tejida</span>
+  <h3>Chaleco calado en crochet</h3><p>Chaleco crema con cuello en V y diseño calado, fresco y elegante.</p>
+  <span class="ask">Pedir por WhatsApp →</span></div></a><a class="card" href="https://wa.me/573115477958?text=Hola%2C%20estoy%20interesado%20en%20este%20producto%20de%20Rial%20Arte%3A%20C%C3%A1rdigan%20blanco%20calado.%20%C2%BFMe%20das%20m%C3%A1s%20informaci%C3%B3n%3F%20https%3A//cesarpalacios.github.io/rial-arte/producto/cardigan-blanco-calado/">
+  <div class="ph"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/DSC_5823-m.jpg" alt=""></div>
+  <div class="tx"><span class="chip">Ropa tejida</span>
+  <h3>Cárdigan blanco calado</h3><p>Cárdigan blanco de manga larga con textura en relieve y aberturas laterales.</p>
+  <span class="ask">Pedir por WhatsApp →</span></div></a><a class="card vert" href="https://wa.me/573115477958?text=Hola%2C%20estoy%20interesado%20en%20este%20producto%20de%20Rial%20Arte%3A%20Conjunto%20de%20beb%C3%A9%20tejido.%20%C2%BFMe%20das%20m%C3%A1s%20informaci%C3%B3n%3F%20https%3A//cesarpalacios.github.io/rial-arte/producto/conjunto-de-bebe-tejido/">
+  <div class="ph"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/Bebe-m.jpg" alt=""></div>
+  <div class="tx"><span class="chip">Ropa tejida</span>
+  <h3>Conjunto de bebé tejido</h3><p>Ajuar tejido para recién nacido: gorrito, chaqueta y accesorios con lazos de satín.</p>
+  <span class="ask">Pedir por WhatsApp →</span></div></a></div>
+  <footer class="pie"><span>Rial Arte · +57 311 547 7958</span><span>3</span></footer></section><section class="page cat cols2">
+  <header class="ph-head"><div><p class="eyebrow">Catálogo</p><h2>Hogar</h2><p class="sub">Toallas bordadas y cojines para decorar y regalar</p></div>
+  <img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/logo.png" alt="" class="mini"></header>
+  <div class="grid"><a class="card" href="https://wa.me/573115477958?text=Hola%2C%20estoy%20interesado%20en%20este%20producto%20de%20Rial%20Arte%3A%20Toalla%20bordada%20zigzag%20arco%C3%ADris.%20%C2%BFMe%20das%20m%C3%A1s%20informaci%C3%B3n%3F%20https%3A//cesarpalacios.github.io/rial-arte/producto/toalla-bordada-zigzag-arcoiris/">
+  <div class="ph"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/DSC_5836-m.jpg" alt=""></div>
+  <div class="tx"><span class="chip">Hogar</span>
+  <h3>Toalla bordada zigzag arcoíris</h3><p>Toalla blanca con bordado en punto zigzag de colores y encaje.</p>
+  <span class="ask">Pedir por WhatsApp →</span></div></a><a class="card" href="https://wa.me/573115477958?text=Hola%2C%20estoy%20interesado%20en%20este%20producto%20de%20Rial%20Arte%3A%20Toalla%20bordada%20flores%20y%20mo%C3%B1o.%20%C2%BFMe%20das%20m%C3%A1s%20informaci%C3%B3n%3F%20https%3A//cesarpalacios.github.io/rial-arte/producto/toalla-bordada-flores-y-lazo/">
+  <div class="ph"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/DSC_5842-m.jpg" alt=""></div>
+  <div class="tx"><span class="chip">Hogar</span>
+  <h3>Toalla bordada flores y moño</h3><p>Toalla con guirnalda de flores bordada, encaje y moño de cinta color durazno.</p>
+  <span class="ask">Pedir por WhatsApp →</span></div></a><a class="card" href="https://wa.me/573115477958?text=Hola%2C%20estoy%20interesado%20en%20este%20producto%20de%20Rial%20Arte%3A%20Toalla%20bordada%20flores%20rojas.%20%C2%BFMe%20das%20m%C3%A1s%20informaci%C3%B3n%3F%20https%3A//cesarpalacios.github.io/rial-arte/producto/toalla-bordada-flores-rojas/">
+  <div class="ph"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/DSC_5846-m.jpg" alt=""></div>
+  <div class="tx"><span class="chip">Hogar</span>
+  <h3>Toalla bordada flores rojas</h3><p>Toalla crema con cinta de flores rojas bordadas en punto cruz.</p>
+  <span class="ask">Pedir por WhatsApp →</span></div></a><a class="card" href="https://wa.me/573115477958?text=Hola%2C%20estoy%20interesado%20en%20este%20producto%20de%20Rial%20Arte%3A%20Coj%C3%ADn%20bordado%20dama%20antigua.%20%C2%BFMe%20das%20m%C3%A1s%20informaci%C3%B3n%3F%20https%3A//cesarpalacios.github.io/rial-arte/producto/cojin-bordado-dama-antigua/">
+  <div class="ph"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/DSC_5873-m.jpg" alt=""></div>
+  <div class="tx"><span class="chip">Hogar</span>
+  <h3>Cojín bordado dama antigua</h3><p>Cojín blanco con dama bordada, vestido tejido en crochet y volante de encaje.</p>
+  <span class="ask">Pedir por WhatsApp →</span></div></a><a class="card vert" href="https://wa.me/573115477958?text=Hola%2C%20estoy%20interesado%20en%20este%20producto%20de%20Rial%20Arte%3A%20Coj%C3%ADn%20calado%20en%20crochet%20blanco.%20%C2%BFMe%20das%20m%C3%A1s%20informaci%C3%B3n%3F%20https%3A//cesarpalacios.github.io/rial-arte/producto/cojin-calado-crochet-blanco/">
+  <div class="ph"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/cojin-calado-blanco-m.jpg" alt=""></div>
+  <div class="tx"><span class="chip">Hogar</span>
+  <h3>Cojín calado en crochet blanco</h3><p>Cojín cubierto con crochet blanco de pequeñas flores caladas.</p>
+  <span class="ask">Pedir por WhatsApp →</span></div></a><a class="tile gold" href="https://wa.me/573115477958?text=Hola%2C%20vi%20el%20cat%C3%A1logo%20de%20Rial%20Arte%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n."><b>¿Algo a tu medida?</b>
+  <span>También tejemos y bordamos por encargo. Cuéntanos tu idea.</span><u>Escríbenos por WhatsApp</u></a></div>
+  <footer class="pie"><span>Rial Arte · +57 311 547 7958</span><span>4</span></footer></section><section class="page cat cols3">
+  <header class="ph-head"><div><p class="eyebrow">Catálogo</p><h2>Bisutería</h2><p class="sub">Aretes en crochet, chaquira y macramé</p></div>
+  <img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/logo.png" alt="" class="mini"></header>
+  <div class="grid"><a class="card vert" href="https://wa.me/573115477958?text=Hola%2C%20estoy%20interesado%20en%20este%20producto%20de%20Rial%20Arte%3A%20Aretes%20flores%20rosadas%20en%20crochet.%20%C2%BFMe%20das%20m%C3%A1s%20informaci%C3%B3n%3F%20https%3A//cesarpalacios.github.io/rial-arte/producto/aretes-flores-rosadas-crochet/">
+  <div class="ph"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/IMG-20261107-WA0006-m.jpg" alt=""></div>
+  <div class="tx"><span class="chip">Bisutería</span>
+  <h3>Aretes flores rosadas en crochet</h3><p>Aretes de flor tejida en crochet, rosa fucsia y blanco, con centro de chaquira.</p>
+  <span class="ask">Pedir por WhatsApp →</span></div></a><a class="card vert" href="https://wa.me/573115477958?text=Hola%2C%20estoy%20interesado%20en%20este%20producto%20de%20Rial%20Arte%3A%20Aretes%20flores%20lilas%20en%20crochet.%20%C2%BFMe%20das%20m%C3%A1s%20informaci%C3%B3n%3F%20https%3A//cesarpalacios.github.io/rial-arte/producto/aretes-flores-lilas-crochet/">
+  <div class="ph"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/IMG-20261107-WA0009-m.jpg" alt=""></div>
+  <div class="tx"><span class="chip">Bisutería</span>
+  <h3>Aretes flores lilas en crochet</h3><p>Aretes de flor en crochet color lila, con centro de chaquiras rosadas.</p>
+  <span class="ask">Pedir por WhatsApp →</span></div></a><a class="card vert" href="https://wa.me/573115477958?text=Hola%2C%20estoy%20interesado%20en%20este%20producto%20de%20Rial%20Arte%3A%20Aretes%20aro%20con%20cristales%20blancos.%20%C2%BFMe%20das%20m%C3%A1s%20informaci%C3%B3n%3F%20https%3A//cesarpalacios.github.io/rial-arte/producto/aretes-aro-cristales-blancos/">
+  <div class="ph"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/IMG-20261107-WA0007-m.jpg" alt=""></div>
+  <div class="tx"><span class="chip">Bisutería</span>
+  <h3>Aretes aro con cristales blancos</h3><p>Aros dorados envueltos en alambre con cristales blancos.</p>
+  <span class="ask">Pedir por WhatsApp →</span></div></a><a class="card vert" href="https://wa.me/573115477958?text=Hola%2C%20estoy%20interesado%20en%20este%20producto%20de%20Rial%20Arte%3A%20Aretes%20gota%20de%20chaquira%20azul%20y%20lila.%20%C2%BFMe%20das%20m%C3%A1s%20informaci%C3%B3n%3F%20https%3A//cesarpalacios.github.io/rial-arte/producto/aretes-gota-chaquira-azul-lila/">
+  <div class="ph"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/IMG-20261107-WA0008-m.jpg" alt=""></div>
+  <div class="tx"><span class="chip">Bisutería</span>
+  <h3>Aretes gota de chaquira azul y lila</h3><p>Aretes en forma de gota tejidos en chaquira azul, lila y rosa.</p>
+  <span class="ask">Pedir por WhatsApp →</span></div></a><a class="card vert" href="https://wa.me/573115477958?text=Hola%2C%20estoy%20interesado%20en%20este%20producto%20de%20Rial%20Arte%3A%20Aretes%20aro%20de%20chaquira%20multicolor.%20%C2%BFMe%20das%20m%C3%A1s%20informaci%C3%B3n%3F%20https%3A//cesarpalacios.github.io/rial-arte/producto/aretes-aro-chaquira-multicolor/">
+  <div class="ph"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/IMG-20261107-WA0010-m.jpg" alt=""></div>
+  <div class="tx"><span class="chip">Bisutería</span>
+  <h3>Aretes aro de chaquira multicolor</h3><p>Aros cubiertos de chaquira multicolor: negro, rojo, amarillo y azul.</p>
+  <span class="ask">Pedir por WhatsApp →</span></div></a><a class="card vert" href="https://wa.me/573115477958?text=Hola%2C%20estoy%20interesado%20en%20este%20producto%20de%20Rial%20Arte%3A%20Aretes%20gota%20azul%20en%20crochet.%20%C2%BFMe%20das%20m%C3%A1s%20informaci%C3%B3n%3F%20https%3A//cesarpalacios.github.io/rial-arte/producto/aretes-gota-azul-crochet/">
+  <div class="ph"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/IMG-20261107-WA0012-m.jpg" alt=""></div>
+  <div class="tx"><span class="chip">Bisutería</span>
+  <h3>Aretes gota azul en crochet</h3><p>Aretes de gota calada tejidos en crochet azul, con chaquiras.</p>
+  <span class="ask">Pedir por WhatsApp →</span></div></a><a class="card vert" href="https://wa.me/573115477958?text=Hola%2C%20estoy%20interesado%20en%20este%20producto%20de%20Rial%20Arte%3A%20Aretes%20hojas%20en%20macram%C3%A9.%20%C2%BFMe%20das%20m%C3%A1s%20informaci%C3%B3n%3F%20https%3A//cesarpalacios.github.io/rial-arte/producto/aretes-hojas-macrame/">
+  <div class="ph"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/IMG-20261107-WA0011-m.jpg" alt=""></div>
+  <div class="tx"><span class="chip">Bisutería</span>
+  <h3>Aretes hojas en macramé</h3><p>Aretes en forma de hoja tejidos en macramé con hilo, en rosa y azul.</p>
+  <span class="ask">Pedir por WhatsApp →</span></div></a><a class="tile gold" href="https://wa.me/573115477958?text=Hola%2C%20vi%20el%20cat%C3%A1logo%20de%20Rial%20Arte%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n."><b>¿Algo a tu medida?</b>
+  <span>También tejemos y bordamos por encargo. Cuéntanos tu idea.</span><u>Escríbenos por WhatsApp</u></a><a class="tile navy" href="https://www.instagram.com/rosairlandaalarconlaverde/"><b>Síguela en Instagram</b>
+  <span>@rosairlandaalarconlaverde</span><u>Ver más trabajos</u></a></div>
+  <footer class="pie"><span>Rial Arte · +57 311 547 7958</span><span>5</span></footer></section><section class="page cat cols2">
+  <header class="ph-head"><div><p class="eyebrow">Catálogo</p><h2>Llaveros y accesorios</h2><p class="sub">Pequeños detalles para regalar</p></div>
+  <img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/logo.png" alt="" class="mini"></header>
+  <div class="grid"><a class="card" href="https://wa.me/573115477958?text=Hola%2C%20estoy%20interesado%20en%20este%20producto%20de%20Rial%20Arte%3A%20Llaveros%20renos%20y%20mu%C3%B1ecos.%20%C2%BFMe%20das%20m%C3%A1s%20informaci%C3%B3n%3F%20https%3A//cesarpalacios.github.io/rial-arte/producto/llaveros-renos-y-munecos/">
+  <div class="ph"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/DSC_5883-m.jpg" alt=""></div>
+  <div class="tx"><span class="chip">Llaveros</span>
+  <h3>Llaveros renos y muñecos</h3><p>Llaveros de renos y muñecos de nieve con bufanda.</p>
+  <span class="ask">Pedir por WhatsApp →</span></div></a><a class="card" href="https://wa.me/573115477958?text=Hola%2C%20estoy%20interesado%20en%20este%20producto%20de%20Rial%20Arte%3A%20Llaveros%20amigurumi%20osos%20y%20conejo.%20%C2%BFMe%20das%20m%C3%A1s%20informaci%C3%B3n%3F%20https%3A//cesarpalacios.github.io/rial-arte/producto/amigurumi-osos-y-conejo/">
+  <div class="ph"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/Ositos-m.jpg" alt=""></div>
+  <div class="tx"><span class="chip">Llaveros</span>
+  <h3>Llaveros amigurumi osos y conejo</h3><p>Osos y conejo tejidos en amigurumi, con borla larga.</p>
+  <span class="ask">Pedir por WhatsApp →</span></div></a><a class="card vert" href="https://wa.me/573115477958?text=Hola%2C%20estoy%20interesado%20en%20este%20producto%20de%20Rial%20Arte%3A%20Conejo%20amigurumi%20con%20zanahoria.%20%C2%BFMe%20das%20m%C3%A1s%20informaci%C3%B3n%3F%20https%3A//cesarpalacios.github.io/rial-arte/producto/conejo-amigurumi-con-zanahoria/">
+  <div class="ph"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/Conejo-m.jpg" alt=""></div>
+  <div class="tx"><span class="chip">Llaveros</span>
+  <h3>Conejo amigurumi con zanahoria</h3><p>Llavero de conejo en amigurumi, con zanahoria de crochet y borla roja.</p>
+  <span class="ask">Pedir por WhatsApp →</span></div></a><a class="card" href="https://wa.me/573115477958?text=Hola%2C%20estoy%20interesado%20en%20este%20producto%20de%20Rial%20Arte%3A%20Metros%20tejidos%20de%20colores.%20%C2%BFMe%20das%20m%C3%A1s%20informaci%C3%B3n%3F%20https%3A//cesarpalacios.github.io/rial-arte/producto/metros-tejidos-de-colores/">
+  <div class="ph"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/DSC_5852-m.jpg" alt=""></div>
+  <div class="tx"><span class="chip">Accesorios</span>
+  <h3>Metros tejidos de colores</h3><p>Cintas métricas forradas en crochet con diseño de mandala.</p>
+  <span class="ask">Pedir por WhatsApp →</span></div></a><a class="card" href="https://wa.me/573115477958?text=Hola%2C%20estoy%20interesado%20en%20este%20producto%20de%20Rial%20Arte%3A%20Guantes%20negros%20tejidos.%20%C2%BFMe%20das%20m%C3%A1s%20informaci%C3%B3n%3F%20https%3A//cesarpalacios.github.io/rial-arte/producto/guantes-negros-tejidos/">
+  <div class="ph"><img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/img/DSC_5868-m.jpg" alt=""></div>
+  <div class="tx"><span class="chip">Accesorios</span>
+  <h3>Guantes negros tejidos</h3><p>Guantes negros tejidos a mano, cómodos y abrigados.</p>
+  <span class="ask">Pedir por WhatsApp →</span></div></a><a class="tile navy" href="https://www.instagram.com/rosairlandaalarconlaverde/"><b>Síguela en Instagram</b>
+  <span>@rosairlandaalarconlaverde</span><u>Ver más trabajos</u></a></div>
+  <footer class="pie"><span>Rial Arte · +57 311 547 7958</span><span>6</span></footer></section><section class="page closing">
+  <img src="file:///Users/ceapalaciosal/Documents/GIT/rial-arte/docs/assets/logo.png" alt="Rial Arte" class="cv-logo">
+  <h2>¿Cómo comprar?</h2>
+  <ol class="steps">
+    <li><b>1</b><h3>Elige</h3><p>Escoge los productos que más te gusten de este catálogo.</p></li>
+    <li><b>2</b><h3>Escríbenos</h3><p>Toca “Pedir por WhatsApp” en el producto: el mensaje sale escrito.</p></li>
+    <li><b>3</b><h3>Acordamos</h3><p>Hablamos de tallas, colores, precio, pago y envío directamente.</p></li>
+  </ol>
+  <a class="btn big" href="https://wa.me/573115477958?text=Hola%2C%20vi%20el%20cat%C3%A1logo%20de%20Rial%20Arte%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n.">WhatsApp +57 311 547 7958</a>
+  <p class="contact">Instagram <a href="https://www.instagram.com/rosairlandaalarconlaverde/">@rosairlandaalarconlaverde</a><br>
+  Web <a href="https://cesarpalacios.github.io/rial-arte/">cesarpalacios.github.io/rial-arte/</a><br>
+  Sogamoso, Boyacá</p>
+  <p class="thanks">Gracias por apoyar el trabajo hecho a mano.</p></section></body></html>

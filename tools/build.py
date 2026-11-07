@@ -41,8 +41,12 @@ def optimizar_fotos(origenes: list, productos: list, extras=()) -> None:
     logo = next((l for o in origenes for l in o.glob("Logo.png")), None)
     if logo:
         with Image.open(logo) as im:
+            # El original trae una línea oscura de 1-3 px en los bordes: se recorta
+            im = im.convert("RGBA")
+            w, h = im.size
+            im = im.crop((4, 4, w - 4, h - 4))
             im.save(DOCS / "assets" / "logo.png", optimize=True)
-            im.resize((64, 55), Image.LANCZOS).save(DOCS / "assets" / "favicon.png")
+            im.resize((64, round(64 * im.size[1] / im.size[0])), Image.LANCZOS).save(DOCS / "assets" / "favicon.png")
     print(f"Fotos optimizadas: {len(usadas)}")
 
 
@@ -240,6 +244,7 @@ def pagina_inicio(site, productos):
     <p class="eyebrow">Catálogo</p>
     <h2>Nuestros productos</h2>
     <p>Toca un producto para ver sus fotos y detalles. Si te enamora, te escribimos por WhatsApp.</p>
+    <p><a class="btn btn-ghost btn-sm" href="catalogo-rial-arte.pdf" download>Descargar catálogo en PDF</a></p>
   </div>
   <div class="filtros" role="group" aria-label="Filtrar por categoría">
     <button class="filtro active" data-cat="todos">Todos</button>{cats}
