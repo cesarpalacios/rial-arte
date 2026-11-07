@@ -47,3 +47,14 @@
   });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrar(); });
 })();
+
+// Video: botón de play grande; los controles aparecen al reproducir
+(function () {
+  var wrap = document.querySelector('.video-wrap');
+  if (!wrap) return;
+  var v = wrap.querySelector('video'), btn = wrap.querySelector('.video-play');
+  v.controls = false;
+  function iniciar() { wrap.classList.add('playing'); v.controls = true; v.play(); }
+  btn.addEventListener('click', iniciar);
+  v.addEventListener('click', function () { if (!v.controls) iniciar(); });
+})();

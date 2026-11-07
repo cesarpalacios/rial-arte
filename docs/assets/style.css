@@ -205,5 +205,10 @@ h1 { overflow-wrap: break-word; }
 .lightbox p { color: #fff; margin: 14px 0 0; text-align: center; }
 
 /* Video */
-.video-wrap { max-width: 920px; margin: 0 auto; aspect-ratio: 16 / 9; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow); background: #000; }
+.video-frame { max-width: 860px; margin: 0 auto; padding: 8px; background: linear-gradient(135deg, var(--gold), var(--gold-soft)); border-radius: 30px; box-shadow: var(--shadow); }
+.video-wrap { position: relative; aspect-ratio: 16 / 9; border-radius: 24px; overflow: hidden; background: #000; }
 .video-wrap video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.video-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 84px; height: 84px; border-radius: 50%; border: 4px solid #fff; background: rgba(31, 42, 90, .85); color: #fff; display: grid; place-items: center; cursor: pointer; padding: 0 0 0 5px; box-shadow: 0 8px 24px rgba(0, 0, 0, .35); transition: transform .2s, background .2s; }
+.video-play:hover { background: var(--navy); transform: translate(-50%, -50%) scale(1.08); }
+.video-wrap.playing .video-play { display: none; }
+@media (max-width: 480px) { .video-frame { padding: 5px; border-radius: 22px; } .video-wrap { border-radius: 17px; } .video-play { width: 64px; height: 64px; } }

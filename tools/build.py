@@ -168,9 +168,11 @@ def pagina_inicio(site, productos):
     if vd:
         video_html = (f'<section id="video" class="section video"><div class="section-head">'
                       f'<p class="eyebrow">Video</p><h2>{esc(vd["titulo"])}</h2><p>{esc(vd["texto"])}</p></div>'
-                      f'<div class="video-wrap"><video controls playsinline preload="none" poster="{esc(vd["poster"])}">'
+                      f'<div class="video-frame"><div class="video-wrap"><video controls playsinline preload="none" poster="{esc(vd["poster"])}">'
                       f'<source src="{esc(vd["archivo"])}" type="video/mp4">Tu navegador no puede reproducir el video.'
-                      f'</video></div></section>')
+                      f'</video><button class="video-play" type="button" aria-label="Reproducir video">'
+                      f'<svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>'
+                      f'</button></div></div></section>')
     mo = site.get("momentos")
     momentos_html = ""
     if mo and mo.get("fotos"):
