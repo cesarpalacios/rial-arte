@@ -160,3 +160,5 @@ blockquote { font-family: var(--serif); font-style: italic; font-size: 1.7rem; c
 /* Redes */
 .embeds { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; }
 .embeds .instagram-media { margin: 0 !important; min-width: 280px !important; max-width: 540px !important; width: 100% !important; flex: 1 1 320px; }
+
+.ig-cta { text-align: center; margin-top: 32px; }

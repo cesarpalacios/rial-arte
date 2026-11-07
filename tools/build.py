@@ -162,6 +162,8 @@ def pagina_inicio(site, productos):
         "telephone": "+" + site["whatsapp"]}, ensure_ascii=False)
     rd = site.get("redes")
     redes_html = ""
+    ig_btn = (f'<p class="ig-cta"><a class="btn btn-ghost" href="{esc(site["instagram"])}" target="_blank" rel="noopener">Ver su Instagram</a></p>'
+              if site.get("instagram") else "")
     if rd and rd.get("posts"):
         embeds = "".join(
             f'<blockquote class="instagram-media" data-instgrm-permalink="{esc(u)}" data-instgrm-version="14">'
@@ -169,7 +171,7 @@ def pagina_inicio(site, productos):
             for u in rd["posts"])
         redes_html = (f'<section id="redes" class="section redes"><div class="section-head">'
                       f'<p class="eyebrow">Redes</p><h2>{esc(rd["titulo"])}</h2><p>{esc(rd["texto"])}</p></div>'
-                      f'<div class="embeds">{embeds}</div></section>'
+                      f'<div class="embeds">{embeds}</div>{ig_btn}</section>'
                       '<script async src="https://www.instagram.com/embed.js"></script>')
     out = head(site, f"{site['nombre']} · {site['lema']}", site["descripcion"], rel,
                site["url_base"], f"assets/img/{hero[0]}-l.jpg",
