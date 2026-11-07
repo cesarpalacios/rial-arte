@@ -1,0 +1,21 @@
+{
+  "nombre": "Rial Arte",
+  "lema": "Tejido y bordado a mano, hecho con historia",
+  "descripcion": "Prendas, accesorios y detalles para el hogar tejidos y bordados a mano. Piezas únicas hechas con paciencia y cariño. Escríbenos por WhatsApp y las hacemos tuyas.",
+  "url_base": "https://cesarpalacios.github.io/rial-arte/",
+  "whatsapp": "573000000000",
+  "whatsapp_visible": "+57 300 000 0000",
+  "instagram": "",
+  "ciudad": "Colombia",
+  "sobre_mi": {
+    "titulo": "Sobre mí",
+    "nombre": "Nombre de la artesana",
+    "foto": "",
+    "parrafos": [
+      "Aquí va la historia de la artesana: cómo y cuándo aprendió a tejer, quién le enseñó, qué la inspira.",
+      "Cuéntanos cómo nació Rial Arte, qué significan las letras R y A del logo y qué la mueve a seguir creando cada pieza.",
+      "Cierra con una frase que la represente, algo que quien visite la página sienta como una invitación."
+    ],
+    "cita": "Cada puntada lleva un pedacito de mi historia."
+  }
+}
