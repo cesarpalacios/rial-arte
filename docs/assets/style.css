@@ -190,3 +190,25 @@ h1 { overflow-wrap: break-word; }
 @media (max-width: 360px) { .nav-wa span { display: none; } .nav-wa { padding: 9px; } }
 @media (min-width: 861px) and (max-width: 1100px) { .grid { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); } }
 @media (min-width: 1500px) { html { font-size: 17px; } .section, .hero { max-width: 1440px; } }
+
+/* Cabecera centrada con logo más grande */
+.topbar { flex-direction: column; justify-content: center; gap: 4px; padding-top: 10px; padding-bottom: 8px; }
+.brand { font-size: 2rem; gap: 14px; justify-content: center; }
+.brand img { height: 78px; }
+.topbar nav { justify-content: center; flex-wrap: wrap; }
+@media (max-width: 860px) {
+  .brand img { height: 66px; }
+  .brand { font-size: 1.8rem; }
+  .topbar nav { gap: 14px; font-size: .9rem; }
+  .topbar nav a:not(.nav-wa) { display: inline; }
+}
+@media (max-width: 480px) {
+  .brand img { height: 58px; }
+  .brand { font-size: 1.6rem; }
+  .topbar { padding: 8px 12px; }
+  .topbar nav { gap: 10px; font-size: .82rem; }
+  .nav-wa { padding: 6px 10px; }
+}
+@media (max-width: 360px) { .nav-wa span { display: inline; } .topbar nav { gap: 8px; } }
+html { scroll-padding-top: 150px; }
+@media (max-width: 480px) { .topbar .nav-wa { display: none; } html { scroll-padding-top: 120px; } }
