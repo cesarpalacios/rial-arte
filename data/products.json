@@ -132,7 +132,8 @@
     ],
     "fotos": [
       "DSC_5873",
-      "DSC_5874"
+      "DSC_5874",
+      "cojin-dama-banca"
     ],
     "destacado": true
   },
@@ -317,6 +318,21 @@
     ],
     "fotos": [
       "IMG-20261107-WA0011"
+    ]
+  },
+  {
+    "slug": "cojin-calado-crochet-blanco",
+    "nombre": "Cojín calado en crochet blanco",
+    "categoria": "Hogar",
+    "resumen": "Cojín cubierto con crochet blanco de pequeñas flores caladas.",
+    "descripcion": "Cojín forrado con un tejido en crochet blanco de florecitas caladas que deja ver el fondo oscuro y crea un contraste elegante. Una pieza de decoración delicada para sala o alcoba.",
+    "detalles": [
+      "Tejido a mano en crochet",
+      "Diseño calado de florecitas",
+      "Decoración y regalo"
+    ],
+    "fotos": [
+      "cojin-calado-blanco"
     ]
   }
 ]

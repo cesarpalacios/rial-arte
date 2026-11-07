@@ -29,5 +29,31 @@
       "https://www.instagram.com/p/BsbiF6AhkQi/",
       "https://www.instagram.com/p/CULCsuXJYI3/"
     ]
+  },
+  "momentos": {
+    "titulo": "Momentos",
+    "texto": "Un vistazo al trabajo detrás de cada pieza.",
+    "fotos": [
+      {
+        "foto": "momento-hilando-lana",
+        "texto": "Hilando lana"
+      },
+      {
+        "foto": "momento-crochet-blanco",
+        "texto": "Tejiendo a crochet"
+      },
+      {
+        "foto": "momento-grupo-tejedoras",
+        "texto": "Tejiendo en compañía"
+      },
+      {
+        "foto": "momento-obra-textil",
+        "texto": "Una obra textil hecha en comunidad"
+      },
+      {
+        "foto": "momento-tejiendo-hilos",
+        "texto": "Entre hilos y agujas"
+      }
+    ]
   }
 }

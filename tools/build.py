@@ -21,11 +21,11 @@ IMG = DOCS / "assets" / "img"
 CATEGORIAS = ["Ropa tejida", "Hogar", "Llaveros", "Bisutería", "Accesorios"]
 
 
-def optimizar_fotos(origenes: list, productos: list) -> None:
+def optimizar_fotos(origenes: list, productos: list, extras=()) -> None:
     from PIL import Image, ImageOps
 
     IMG.mkdir(parents=True, exist_ok=True)
-    usadas = {f for p in productos for f in p["fotos"]}
+    usadas = {f for p in productos for f in p["fotos"]} | set(extras)
     for nombre in sorted(usadas):
         src = next((o / f"{nombre}{ext}" for o in origenes
                     for ext in (".JPG", ".jpg", ".jpeg", ".png") if (o / f"{nombre}{ext}").exists()), None)
@@ -102,6 +102,7 @@ def header(site, rel):
   <nav aria-label="Principal">
     <a href="{rel}index.html#catalogo">Catálogo</a>
     <a href="{rel}index.html#sobre-mi">Sobre mí</a>
+    <a href="{rel}index.html#momentos">Momentos</a>
     <a href="{rel}index.html#redes">Redes</a>
     <a href="{rel}index.html#como-comprar">Cómo comprar</a>
     <a class="nav-wa" href="{wa_link(site)}" target="_blank" rel="noopener">{WA_ICON}<span>WhatsApp</span></a>
@@ -162,6 +163,18 @@ def pagina_inicio(site, productos):
         "description": site["descripcion"], "url": site["url_base"],
         "image": site["url_base"] + "assets/logo.png",
         "telephone": "+" + site["whatsapp"]}, ensure_ascii=False)
+    mo = site.get("momentos")
+    momentos_html = ""
+    if mo and mo.get("fotos"):
+        items = ""
+        for m in mo["fotos"]:
+            w, h = tamanio(m["foto"], "m")
+            items += (f'<a class="momento" href="assets/img/{m["foto"]}-l.jpg" data-full="assets/img/{m["foto"]}-l.jpg" '
+                      f'data-cap="{esc(m["texto"])}"><img src="assets/img/{m["foto"]}-m.jpg" alt="{esc(m["texto"])}" '
+                      f'width="{w}" height="{h}" loading="lazy"><span>{esc(m["texto"])}</span></a>')
+        momentos_html = (f'<section id="momentos" class="section momentos"><div class="section-head">'
+                         f'<p class="eyebrow">Galería</p><h2>{esc(mo["titulo"])}</h2><p>{esc(mo["texto"])}</p></div>'
+                         f'<div class="galeria-momentos">{items}</div></section>')
     rd = site.get("redes")
     redes_html = ""
     ig_btn = (f'<p class="ig-cta"><a class="btn btn-ghost" href="{esc(site["instagram"])}" target="_blank" rel="noopener">Ver su Instagram</a></p>'
@@ -236,6 +249,7 @@ def pagina_inicio(site, productos):
   </div>
 </section>
 
+{momentos_html}
 {redes_html}
 <section id="como-comprar" class="section como">
   <div class="section-head">
@@ -334,7 +348,8 @@ def main():
     site = json.loads((ROOT / "data" / "site.json").read_text(encoding="utf-8"))
     productos = json.loads((ROOT / "data" / "products.json").read_text(encoding="utf-8"))
     if args.fotos:
-        optimizar_fotos(args.fotos, productos)
+        optimizar_fotos(args.fotos + [ROOT / "fotos-origen"], productos,
+                        [m["foto"] for m in site.get("momentos", {}).get("fotos", [])])
 
     prod_dir = DOCS / "producto"
     if prod_dir.exists():

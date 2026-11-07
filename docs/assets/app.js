@@ -24,3 +24,26 @@
     });
   });
 })();
+
+// Galería "Momentos": ampliar foto al tocarla
+(function () {
+  var items = document.querySelectorAll('.momento');
+  if (!items.length) return;
+  function cerrar() { var l = document.querySelector('.lightbox'); if (l) l.remove(); }
+  items.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      cerrar();
+      var l = document.createElement('div');
+      l.className = 'lightbox';
+      l.setAttribute('role', 'dialog');
+      l.innerHTML = '<img alt=""><p></p>';
+      l.querySelector('img').src = a.getAttribute('data-full');
+      l.querySelector('img').alt = a.getAttribute('data-cap');
+      l.querySelector('p').textContent = a.getAttribute('data-cap');
+      l.addEventListener('click', cerrar);
+      document.body.appendChild(l);
+    });
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrar(); });
+})();
