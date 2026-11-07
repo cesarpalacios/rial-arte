@@ -184,7 +184,7 @@ def pagina_inicio(site, productos):
 <main>
 <section class="hero">
   <div class="hero-text">
-    <p class="eyebrow">Tejido · Crochet · Bordado</p>
+    <p class="eyebrow">Tejido · Crochet · Bordado · Bisutería</p>
     <h1>Piezas únicas hechas <em>a mano</em>, puntada a puntada</h1>
     <p class="lead">{esc(site['descripcion'])}</p>
     <div class="hero-actions">
