@@ -14,9 +14,13 @@
     "parrafos": [
       "Toda su vida ha estado entre hilos y agujas. Rosa Irlanda ha dedicado su vida a tejer y a enseñar a tejer, y su conocimiento y sus manos son, en palabras de quienes trabajan con ella, “nuestra riqueza más grande”.",
       "Ha trabajado junto a las tejedoras de Priah Heritage, una marca colombiana de tejido hecho a mano, donde la llaman “el alma de Priah”.",
+      "Además de tejer, elabora bisutería —aretes en crochet, chaquira y macramé—, con técnicas aprendidas en la Fundación Internacional María Luisa de Moreno, que impulsa la formación para el emprendimiento.",
       "Rial Arte es su taller propio: chalecos, abrigos, toallas bordadas, cojines y llaveros, cada uno hecho puntada a puntada, con la paciencia y el cariño de toda una vida tejiendo."
     ],
-    "cita": "Cada puntada lleva un pedacito de mi historia."
+    "cita": "Cada puntada lleva un pedacito de mi historia.",
+    "enlaces": {
+      "Fundación Internacional María Luisa de Moreno": "https://colombia.marialuisa.foundation/"
+    }
   },
   "redes": {
     "titulo": "Su trabajo en redes",

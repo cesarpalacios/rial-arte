@@ -146,7 +146,12 @@ def pagina_inicio(site, productos):
         f'<button class="filtro" data-cat="{esc(c)}">{esc(c)}</button>'
         for c in CATEGORIAS if any(p["categoria"] == c for p in productos))
     sm = site["sobre_mi"]
-    parrafos = "".join(f"<p>{esc(t)}</p>" for t in sm["parrafos"])
+    def _p(t):
+        t = esc(t)
+        for k, u in sm.get("enlaces", {}).items():
+            t = t.replace(esc(k), f'<a href="{esc(u)}" target="_blank" rel="noopener">{esc(k)}</a>')
+        return f"<p>{t}</p>"
+    parrafos = "".join(_p(t) for t in sm["parrafos"])
     foto_sm = (f'<img src="assets/{esc(sm["foto"])}" alt="{esc(sm["nombre"])}" loading="lazy">'
                if sm.get("foto") else
                f'<div class="sm-logo"><img src="assets/logo.png" alt="Logo Rial Arte" width="220" height="189"></div>')
