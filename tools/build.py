@@ -141,6 +141,8 @@ def card(p, rel):
 def pagina_inicio(site, productos):
     rel = ""
     destacados = [p for p in productos if p.get("destacado")]
+    fotos_js = json.dumps([{"s": p["slug"], "n": p["nombre"], "f": p["fotos"][0]} for p in productos],
+                          ensure_ascii=False)
     hero = [p["fotos"][0] for p in destacados[:3]] or [productos[0]["fotos"][0]] * 3
     cats = "".join(
         f'<button class="filtro" data-cat="{esc(c)}">{esc(c)}</button>'
@@ -190,11 +192,18 @@ def pagina_inicio(site, productos):
       <a class="btn btn-ghost" href="{wa_link(site)}" target="_blank" rel="noopener">{WA_ICON} Escribir por WhatsApp</a>
     </div>
   </div>
-  <div class="hero-art" aria-hidden="true">
-    <figure class="arch a1"><img src="assets/img/{hero[0]}-l.jpg" alt=""></figure>
-    <figure class="arch a2"><img src="assets/img/{hero[1 % len(hero)]}-l.jpg" alt=""></figure>
-    <figure class="arch a3"><img src="assets/img/{hero[2 % len(hero)]}-l.jpg" alt=""></figure>
+  <div class="hero-art" id="hero-art">
+    <a class="arch a1" href="producto/{destacados[0]['slug'] if destacados else productos[0]['slug']}/"><img src="assets/img/{hero[0]}-l.jpg" alt=""></a>
+    <a class="arch a2" href="producto/{destacados[1 % len(destacados)]['slug'] if destacados else productos[0]['slug']}/"><img src="assets/img/{hero[1 % len(hero)]}-m.jpg" alt=""></a>
+    <a class="arch a3" href="producto/{destacados[2 % len(destacados)]['slug'] if destacados else productos[0]['slug']}/"><img src="assets/img/{hero[2 % len(hero)]}-m.jpg" alt=""></a>
   </div>
+  <script>
+  /* Cada visita muestra tres fotos distintas del catálogo, elegidas al azar */
+  (function(){{var f={fotos_js};var a=document.querySelectorAll('#hero-art .arch');
+  for(var i=f.length-1;i>0;i--){{var j=Math.floor(Math.random()*(i+1)),t=f[i];f[i]=f[j];f[j]=t;}}
+  a.forEach(function(el,k){{var p=f[k];if(!p)return;el.href='producto/'+p.s+'/';el.setAttribute('aria-label',p.n);
+  var im=el.querySelector('img');im.alt=p.n;im.src='assets/img/'+p.f+(k===0?'-l':'-m')+'.jpg';}});}})();
+  </script>
 </section>
 
 <section class="valores" aria-label="Por qué Rial Arte">
