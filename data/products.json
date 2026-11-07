@@ -139,13 +139,12 @@
   {
     "slug": "gorros-papa-noel",
     "nombre": "Gorros Papá Noel",
-    "categoria": "Navidad",
+    "categoria": "Ropa tejida",
     "resumen": "Gorros rojos tejidos con aplique de Papá Noel, en punto trenzado y en espiga.",
     "descripcion": "Gorros tejidos en rojo intenso con un tierno Papá Noel de crochet aplicado. Disponibles con pompón o en versión clásica.",
     "detalles": [
       "Tejidos a mano",
-      "Aplique de Papá Noel en crochet",
-      "Edición navideña"
+      "Aplique de Papá Noel en crochet"
     ],
     "fotos": [
       "DSC_5856",
@@ -155,7 +154,7 @@
   {
     "slug": "llaveros-renos-y-munecos",
     "nombre": "Llaveros renos y muñecos",
-    "categoria": "Navidad",
+    "categoria": "Llaveros",
     "resumen": "Llaveros de renos y muñecos de nieve con bufanda.",
     "descripcion": "Renos con nariz roja y muñecos de nieve con bufandas, tejidos en crochet. Cada uno con su carácter.",
     "detalles": [
@@ -203,7 +202,7 @@
   {
     "slug": "amigurumi-osos-y-conejo",
     "nombre": "Llaveros amigurumi osos y conejo",
-    "categoria": "Accesorios",
+    "categoria": "Llaveros",
     "resumen": "Osos y conejo tejidos en amigurumi, con borla larga.",
     "descripcion": "Cabecitas de osos y conejo tejidas en amigurumi, con borlas largas para colgar de llaves, bolso o mochila.",
     "detalles": [
@@ -218,7 +217,7 @@
   {
     "slug": "conejo-amigurumi-con-zanahoria",
     "nombre": "Conejo amigurumi con zanahoria",
-    "categoria": "Accesorios",
+    "categoria": "Llaveros",
     "resumen": "Llavero de conejo en amigurumi, con zanahoria de crochet y borla roja.",
     "descripcion": "Tierno conejo de orejas largas con su zanahoria de crochet y una borla roja. Un detalle muy fácil de querer.",
     "detalles": [

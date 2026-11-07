@@ -18,7 +18,7 @@ from urllib.parse import quote
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
 IMG = DOCS / "assets" / "img"
-CATEGORIAS = ["Ropa tejida", "Hogar", "Navidad", "Accesorios"]
+CATEGORIAS = ["Ropa tejida", "Hogar", "Llaveros", "Accesorios"]
 
 
 def optimizar_fotos(origen: Path, productos: list) -> None:
