@@ -18,19 +18,19 @@ from urllib.parse import quote
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
 IMG = DOCS / "assets" / "img"
-CATEGORIAS = ["Ropa tejida", "Hogar", "Llaveros", "Accesorios"]
+CATEGORIAS = ["Ropa tejida", "Hogar", "Llaveros", "Bisutería", "Accesorios"]
 
 
-def optimizar_fotos(origen: Path, productos: list) -> None:
+def optimizar_fotos(origenes: list, productos: list) -> None:
     from PIL import Image, ImageOps
 
     IMG.mkdir(parents=True, exist_ok=True)
     usadas = {f for p in productos for f in p["fotos"]}
     for nombre in sorted(usadas):
-        src = next((origen / f"{nombre}{ext}" for ext in (".JPG", ".jpg", ".jpeg", ".png")
-                    if (origen / f"{nombre}{ext}").exists()), None)
+        src = next((o / f"{nombre}{ext}" for o in origenes
+                    for ext in (".JPG", ".jpg", ".jpeg", ".png") if (o / f"{nombre}{ext}").exists()), None)
         if not src:
-            sys.exit(f"No encuentro la foto {nombre} en {origen}")
+            sys.exit(f"No encuentro la foto {nombre} en {origenes}")
         with Image.open(src) as im:
             im = ImageOps.exif_transpose(im).convert("RGB")
             for etiqueta, lado in (("l", 1400), ("m", 640)):
@@ -38,7 +38,7 @@ def optimizar_fotos(origen: Path, productos: list) -> None:
                 c.thumbnail((lado, lado), Image.LANCZOS)
                 c.save(IMG / f"{nombre}-{etiqueta}.jpg", "JPEG", quality=82, optimize=True,
                        progressive=True)
-    logo = next(origen.glob("Logo.png"), None)
+    logo = next((l for o in origenes for l in o.glob("Logo.png")), None)
     if logo:
         with Image.open(logo) as im:
             im.save(DOCS / "assets" / "logo.png", optimize=True)
@@ -312,7 +312,7 @@ def sitemap(site, productos):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--fotos", type=Path, help="Carpeta con las fotos originales")
+    ap.add_argument("--fotos", type=Path, nargs="+", help="Carpeta(s) con las fotos originales")
     args = ap.parse_args()
 
     site = json.loads((ROOT / "data" / "site.json").read_text(encoding="utf-8"))

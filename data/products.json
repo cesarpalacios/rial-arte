@@ -213,5 +213,110 @@
     "fotos": [
       "Conejo"
     ]
+  },
+  {
+    "slug": "aretes-flores-rosadas-crochet",
+    "nombre": "Aretes flores rosadas en crochet",
+    "categoria": "Bisutería",
+    "resumen": "Aretes de flor tejida en crochet, rosa fucsia y blanco, con centro de chaquira.",
+    "descripcion": "Flores tejidas a mano en crochet en tonos rosa fucsia y blanco, con un centro de chaquira y gancho dorado. Livianos y llenos de color.",
+    "detalles": [
+      "Tejidos a mano en crochet",
+      "Centro de chaquira",
+      "Gancho dorado"
+    ],
+    "fotos": [
+      "IMG-20261107-WA0006"
+    ]
+  },
+  {
+    "slug": "aretes-flores-lilas-crochet",
+    "nombre": "Aretes flores lilas en crochet",
+    "categoria": "Bisutería",
+    "resumen": "Aretes de flor en crochet color lila, con centro de chaquiras rosadas.",
+    "descripcion": "Rosas tejidas a mano en crochet en color lila, con pequeñas chaquiras rosadas al centro. Delicados y femeninos.",
+    "detalles": [
+      "Tejidos a mano en crochet",
+      "Centro de chaquiras",
+      "Gancho dorado"
+    ],
+    "fotos": [
+      "IMG-20261107-WA0009"
+    ]
+  },
+  {
+    "slug": "aretes-aro-cristales-blancos",
+    "nombre": "Aretes aro con cristales blancos",
+    "categoria": "Bisutería",
+    "resumen": "Aros dorados envueltos en alambre con cristales blancos.",
+    "descripcion": "Aros dorados trabajados a mano con alambre y cuentas de cristal blanco con brillo irisado. Elegantes para el día o la noche.",
+    "detalles": [
+      "Hechos a mano",
+      "Aro dorado con alambre y cristales",
+      "Brillo irisado"
+    ],
+    "fotos": [
+      "IMG-20261107-WA0007"
+    ]
+  },
+  {
+    "slug": "aretes-gota-chaquira-azul-lila",
+    "nombre": "Aretes gota de chaquira azul y lila",
+    "categoria": "Bisutería",
+    "resumen": "Aretes en forma de gota tejidos en chaquira azul, lila y rosa.",
+    "descripcion": "Gotas de chaquira en tonos azul, lila y rosa, tejidas cuenta por cuenta y rematadas con un detalle fucsia. Alegres y livianos.",
+    "detalles": [
+      "Chaquira tejida a mano",
+      "Gancho dorado",
+      "Livianos"
+    ],
+    "fotos": [
+      "IMG-20261107-WA0008"
+    ]
+  },
+  {
+    "slug": "aretes-aro-chaquira-multicolor",
+    "nombre": "Aretes aro de chaquira multicolor",
+    "categoria": "Bisutería",
+    "resumen": "Aros cubiertos de chaquira multicolor: negro, rojo, amarillo y azul.",
+    "descripcion": "Aros cubiertos a mano con chaquiras de colores vivos: negro, rojo, amarillo, azul y blanco. Para quien quiere color en cada detalle.",
+    "detalles": [
+      "Chaquira tejida a mano",
+      "Aro de acero",
+      "Multicolor"
+    ],
+    "fotos": [
+      "IMG-20261107-WA0010"
+    ]
+  },
+  {
+    "slug": "aretes-gota-azul-crochet",
+    "nombre": "Aretes gota azul en crochet",
+    "categoria": "Bisutería",
+    "resumen": "Aretes de gota calada tejidos en crochet azul, con chaquiras.",
+    "descripcion": "Gotas caladas tejidas en crochet color azul rey y decoradas con chaquiras del mismo tono. Un diseño fino y ligero.",
+    "detalles": [
+      "Tejidos a mano en crochet",
+      "Detalle de chaquiras",
+      "Ganchos de acero"
+    ],
+    "fotos": [
+      "IMG-20261107-WA0012"
+    ]
+  },
+  {
+    "slug": "aretes-hojas-en-hilo",
+    "nombre": "Aretes hojas en hilo",
+    "categoria": "Bisutería",
+    "resumen": "Aretes en forma de hoja tejidos con hilo, en rosa y azul.",
+    "descripcion": "Hojas elaboradas a mano con hilos en degradé, disponibles en rosa y en azul, con argolla pequeña. Muy livianos.",
+    "detalles": [
+      "Hechos a mano con hilo",
+      "Disponibles en rosa y azul",
+      "Argolla pequeña"
+    ],
+    "fotos": [
+      "IMG-20261107-WA0011"
+    ]
   }
 ]
