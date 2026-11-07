@@ -162,3 +162,11 @@ blockquote { font-family: var(--serif); font-style: italic; font-size: 1.7rem; c
 .embeds .instagram-media { margin: 0 !important; min-width: 280px !important; max-width: 540px !important; width: 100% !important; flex: 1 1 320px; }
 
 .ig-cta { text-align: center; margin-top: 32px; }
+
+/* Logo destacado */
+.topbar { padding-top: 6px; padding-bottom: 6px; }
+.brand img { height: 60px; filter: drop-shadow(0 3px 6px rgba(31, 42, 90, .25)); }
+.brand { font-size: 1.75rem; }
+.hero-logo { width: clamp(140px, 17vw, 215px); height: auto; margin: 0 0 18px; filter: drop-shadow(0 8px 18px rgba(232, 184, 56, .45)); }
+.footer img { width: 150px; height: auto; margin: 0 auto; filter: drop-shadow(0 6px 14px rgba(232, 184, 56, .4)); }
+@media (max-width: 860px) { .brand img { height: 50px; } .hero-logo { margin-inline: auto; display: block; } .hero-text { text-align: center; } .hero-actions { justify-content: center; } }
