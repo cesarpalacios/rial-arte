@@ -102,6 +102,7 @@ def header(site, rel):
   <nav aria-label="Principal">
     <a href="{rel}index.html#catalogo">Catálogo</a>
     <a href="{rel}index.html#sobre-mi">Sobre mí</a>
+    <a href="{rel}index.html#redes">Redes</a>
     <a href="{rel}index.html#como-comprar">Cómo comprar</a>
     <a class="nav-wa" href="{wa_link(site)}" target="_blank" rel="noopener">{WA_ICON}<span>WhatsApp</span></a>
   </nav>
@@ -154,6 +155,17 @@ def pagina_inicio(site, productos):
         "description": site["descripcion"], "url": site["url_base"],
         "image": site["url_base"] + "assets/logo.png",
         "telephone": "+" + site["whatsapp"]}, ensure_ascii=False)
+    rd = site.get("redes")
+    redes_html = ""
+    if rd and rd.get("posts"):
+        embeds = "".join(
+            f'<blockquote class="instagram-media" data-instgrm-permalink="{esc(u)}" data-instgrm-version="14">'
+            f'<a href="{esc(u)}" target="_blank" rel="noopener">Ver publicación en Instagram</a></blockquote>'
+            for u in rd["posts"])
+        redes_html = (f'<section id="redes" class="section redes"><div class="section-head">'
+                      f'<p class="eyebrow">Redes</p><h2>{esc(rd["titulo"])}</h2><p>{esc(rd["texto"])}</p></div>'
+                      f'<div class="embeds">{embeds}</div></section>'
+                      '<script async src="https://www.instagram.com/embed.js"></script>')
     out = head(site, f"{site['nombre']} · {site['lema']}", site["descripcion"], rel,
                site["url_base"], f"assets/img/{hero[0]}-l.jpg",
                f'<script type="application/ld+json">{jsonld}</script>')
@@ -208,6 +220,7 @@ def pagina_inicio(site, productos):
   </div>
 </section>
 
+{redes_html}
 <section id="como-comprar" class="section como">
   <div class="section-head">
     <p class="eyebrow">Comprar es fácil</p>

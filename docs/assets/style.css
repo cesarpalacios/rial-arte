@@ -156,3 +156,7 @@ blockquote { font-family: var(--serif); font-style: italic; font-size: 1.7rem; c
   .brand span { font-size: 1.35rem; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+
+/* Redes */
+.embeds { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; }
+.embeds .instagram-media { margin: 0 !important; min-width: 280px !important; max-width: 540px !important; width: 100% !important; flex: 1 1 320px; }

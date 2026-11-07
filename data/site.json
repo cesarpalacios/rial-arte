@@ -12,10 +12,18 @@
     "nombre": "Rosa Irlanda Alarcón Laverde",
     "foto": "",
     "parrafos": [
-      "Aquí va la historia de la artesana: cómo y cuándo aprendió a tejer, quién le enseñó, qué la inspira.",
-      "Cuéntanos cómo nació Rial Arte, qué significan las letras R y A del logo y qué la mueve a seguir creando cada pieza.",
-      "Cierra con una frase que la represente, algo que quien visite la página sienta como una invitación."
+      "Toda su vida ha estado entre hilos y agujas. Rosa Irlanda ha dedicado su vida a tejer y a enseñar a tejer, y su conocimiento y sus manos son, en palabras de quienes trabajan con ella, “nuestra riqueza más grande”.",
+      "Ha trabajado junto a las tejedoras de Priah Heritage, una marca colombiana de tejido hecho a mano, donde la llaman “el alma de Priah”.",
+      "Rial Arte es su taller propio: chalecos, abrigos, toallas bordadas, cojines y detalles navideños, cada uno hecho puntada a puntada. [Pendiente: contar cómo aprendió, quién le enseñó y cómo nació Rial Arte.]"
     ],
     "cita": "Cada puntada lleva un pedacito de mi historia."
+  },
+  "redes": {
+    "titulo": "Su trabajo en redes",
+    "texto": "Publicaciones de terceros donde se cuenta su trabajo como tejedora.",
+    "posts": [
+      "https://www.instagram.com/p/BsbiF6AhkQi/",
+      "https://www.instagram.com/p/CULCsuXJYI3/"
+    ]
   }
 }
