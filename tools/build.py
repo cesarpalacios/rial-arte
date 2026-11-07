@@ -97,7 +97,7 @@ def head(site, titulo, desc, rel, canonical, imagen, extra=""):
 def header(site, rel):
     return f"""<header class="topbar">
   <a class="brand" href="{rel or './'}" aria-label="Rial Arte, inicio">
-    <img src="{rel}assets/logo.png" alt="" width="70" height="62"><span>{esc(site['nombre'])}</span>
+    <img src="{rel}assets/logo.png" alt="" width="60" height="52"><span>{esc(site['nombre'])}</span>
   </a>
   <nav aria-label="Principal">
     <a href="{rel}index.html#catalogo">Catálogo</a>
@@ -113,7 +113,7 @@ def footer(site, rel):
     ig = (f'<a href="{esc(site["instagram"])}" target="_blank" rel="noopener">Instagram</a>'
           if site.get("instagram") else "")
     return f"""<footer class="footer">
-  <img src="{rel}assets/logo.png" alt="Rial Arte" width="150" height="129">
+  <img src="{rel}assets/logo.png" alt="Rial Arte" width="72" height="62">
   <p class="footer-lema">{esc(site['lema'])}</p>
   <p class="footer-links"><a href="{wa_link(site)}" target="_blank" rel="noopener">WhatsApp {esc(site['whatsapp_visible'])}</a> {ig}</p>
   <p class="footer-small">© {esc(site['nombre'])} · Hecho a mano en {esc(site['ciudad'])}</p>
@@ -182,7 +182,6 @@ def pagina_inicio(site, productos):
 <main>
 <section class="hero">
   <div class="hero-text">
-    <img class="hero-logo" src="assets/logo.png" alt="Logo Rial Arte" width="215" height="184">
     <p class="eyebrow">Tejido · Crochet · Bordado</p>
     <h1>Piezas únicas hechas <em>a mano</em>, puntada a puntada</h1>
     <p class="lead">{esc(site['descripcion'])}</p>
