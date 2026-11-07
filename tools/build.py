@@ -82,8 +82,21 @@ def head(site, titulo, desc, rel, canonical, imagen, extra=""):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(titulo)}</title>
 <meta name="description" content="{esc(desc)}">
+<meta name="keywords" content="{esc(site.get('seo_palabras', ''))}">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="{esc(site['nombre'])}">
 <link rel="canonical" href="{esc(canonical)}">
+<link rel="alternate" hreflang="es-CO" href="{esc(canonical)}">
+<link rel="alternate" hreflang="x-default" href="{esc(canonical)}">
 <link rel="icon" href="{rel}assets/favicon.png">
+<link rel="apple-touch-icon" href="{rel}assets/logo.png">
+<meta property="og:site_name" content="{esc(site['nombre'])}">
+<meta property="og:url" content="{esc(canonical)}">
+<meta property="og:image:alt" content="{esc(titulo)}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{esc(titulo)}">
+<meta name="twitter:description" content="{esc(desc)}">
+<meta name="twitter:image" content="{esc(site['url_base'] + imagen)}">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{esc(titulo)}">
 <meta property="og:description" content="{esc(desc)}">
@@ -162,11 +175,24 @@ def pagina_inicio(site, productos):
     foto_sm = (f'<img src="assets/{esc(sm["foto"])}" alt="{esc(sm["nombre"])}" loading="lazy">'
                if sm.get("foto") else
                f'<div class="sm-logo"><img src="assets/logo.png" alt="Logo Rial Arte" width="220" height="189"></div>')
-    jsonld = json.dumps({
-        "@context": "https://schema.org", "@type": "LocalBusiness", "name": site["nombre"],
-        "description": site["descripcion"], "url": site["url_base"],
-        "image": site["url_base"] + "assets/logo.png",
-        "telephone": "+" + site["whatsapp"]}, ensure_ascii=False)
+    base = site["url_base"]
+    sameas = [site["instagram"]] if site.get("instagram") else []
+    jsonld = json.dumps({"@context": "https://schema.org", "@graph": [
+        {"@type": "WebSite", "@id": base + "#web", "url": base, "name": site["nombre"],
+         "description": site.get("seo_descripcion", site["descripcion"]), "inLanguage": "es-CO",
+         "publisher": {"@id": base + "#negocio"}},
+        {"@type": "LocalBusiness", "@id": base + "#negocio", "name": site["nombre"], "url": base,
+         "description": site["descripcion"], "image": base + "assets/logo.png", "logo": base + "assets/logo.png",
+         "telephone": "+" + site["whatsapp"], "priceRange": "$$", "sameAs": sameas,
+         "address": {"@type": "PostalAddress", "addressLocality": "Sogamoso", "addressRegion": "Boyacá",
+                     "addressCountry": "CO"},
+         "founder": {"@type": "Person", "name": site["sobre_mi"]["nombre"]},
+         "contactPoint": {"@type": "ContactPoint", "telephone": "+" + site["whatsapp"],
+                          "contactType": "ventas", "availableLanguage": "es"}},
+        {"@type": "ItemList", "name": "Catálogo de productos",
+         "itemListElement": [{"@type": "ListItem", "position": n + 1,
+                              "url": base + f"producto/{q['slug']}/", "name": q["nombre"]}
+                             for n, q in enumerate(productos)]}]}, ensure_ascii=False)
     vd = site.get("video")
     video_html = ""
     if vd:
@@ -202,7 +228,7 @@ def pagina_inicio(site, productos):
                       f'<p class="eyebrow">Redes</p><h2>{esc(rd["titulo"])}</h2><p>{esc(rd["texto"])}</p></div>'
                       f'<div class="embeds">{embeds}</div>{ig_btn}</section>'
                       '<script async src="https://www.instagram.com/embed.js"></script>')
-    out = head(site, f"{site['nombre']} · {site['lema']}", site["descripcion"], rel,
+    out = head(site, site.get("seo_titulo", site["nombre"]), site.get("seo_descripcion", site["descripcion"]), rel,
                site["url_base"], f"assets/img/{hero[0]}-l.jpg",
                f'<script type="application/ld+json">{jsonld}</script>')
     out += f"""
@@ -312,9 +338,16 @@ def pagina_producto(site, p, productos):
         "@context": "https://schema.org", "@type": "Product", "name": p["nombre"],
         "description": p["descripcion"], "category": p["categoria"],
         "image": [site["url_base"] + f"assets/img/{f}-l.jpg" for f in fotos],
-        "brand": {"@type": "Brand", "name": site["nombre"]}, "url": url}, ensure_ascii=False)
-    out = head(site, f"{p['nombre']} · {site['nombre']}", p["resumen"], rel, url,
-               f"assets/img/{principal}-l.jpg", f'<script type="application/ld+json">{jsonld}</script>')
+        "brand": {"@type": "Brand", "name": site["nombre"]}, "url": url, "sku": p["slug"],
+        "manufacturer": {"@type": "Organization", "name": site["nombre"]}}, ensure_ascii=False)
+    crumbs = json.dumps({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": site["url_base"]},
+        {"@type": "ListItem", "position": 2, "name": p["categoria"], "item": site["url_base"] + "#catalogo"},
+        {"@type": "ListItem", "position": 3, "name": p["nombre"], "item": url}]}, ensure_ascii=False)
+    desc_seo = f"{p['resumen']} Hecho a mano por {site['nombre']}. Pídelo por WhatsApp."
+    out = head(site, f"{p['nombre']} hecho a mano · {site['nombre']}", desc_seo, rel, url,
+               f"assets/img/{principal}-l.jpg",
+               f'<script type="application/ld+json">{jsonld}</script>\n<script type="application/ld+json">{crumbs}</script>')
     out += f"""
 <body class="detalle-page">
 {header(site, rel)}
@@ -351,9 +384,27 @@ def pagina_producto(site, p, productos):
 
 
 def sitemap(site, productos):
-    urls = [site["url_base"]] + [site["url_base"] + f"producto/{p['slug']}/" for p in productos]
-    cuerpo = "\n".join(f"  <url><loc>{u}</loc></url>" for u in urls)
-    return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{cuerpo}\n</urlset>\n'
+    from datetime import date
+    hoy = date.today().isoformat()
+    base = site["url_base"]
+    filas = [f"  <url><loc>{base}</loc><lastmod>{hoy}</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>"]
+    for p in productos:
+        imgs = "".join(f"<image:image><image:loc>{base}assets/img/{f}-l.jpg</image:loc>"
+                       f"<image:title>{esc(p['nombre'])}</image:title></image:image>" for f in p["fotos"])
+        filas.append(f"  <url><loc>{base}producto/{p['slug']}/</loc><lastmod>{hoy}</lastmod>"
+                     f"<changefreq>monthly</changefreq><priority>0.8</priority>{imgs}</url>")
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+            'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n' + "\n".join(filas) + "\n</urlset>\n")
+
+
+def pagina_404(site):
+    rel = "/" + site["url_base"].split("/", 3)[3]
+    return (head(site, f"Página no encontrada · {site['nombre']}", site["descripcion"], rel, site["url_base"],
+                 "assets/logo.png", '<meta name="robots" content="noindex">').replace('href="assets/', f'href="{rel}assets/')
+            + f"""<body><main class="detalle" style="text-align:center;padding:80px 16px">
+<img src="{rel}assets/logo.png" alt="Rial Arte" width="120" height="103" style="margin:0 auto 16px">
+<h1>Esta página no existe</h1><p>Pero tenemos mucho por mostrarte.</p>
+<p><a class="btn btn-primary" href="{rel}">Ir al catálogo</a></p></main></body></html>""")
 
 
 def main():
@@ -379,6 +430,7 @@ def main():
              for p in productos for f in p["fotos"]]
     (DOCS / "fotos.json").write_text(json.dumps(fotos, ensure_ascii=False), encoding="utf-8")
     (DOCS / "sitemap.xml").write_text(sitemap(site, productos), encoding="utf-8")
+    (DOCS / "404.html").write_text(pagina_404(site), encoding="utf-8")
     (DOCS / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {site['url_base']}sitemap.xml\n")
     (DOCS / ".nojekyll").write_text("")
     print(f"Sitio generado: {len(productos)} productos")
