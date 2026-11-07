@@ -113,7 +113,7 @@ def main():
   <footer class="pie"><span>Rial Arte · {esc(site['whatsapp_visible'])}</span><span>2</span></footer></section>"""
 
     paginas = [
-        pagina_cat("Ropa tejida", "Prendas únicas tejidas a mano", por_cat("Ropa tejida"), 2, [], 3),
+        pagina_cat("Ropa tejida", "Prendas únicas tejidas a mano", por_cat("Ropa tejida"), 2, [tile_encargo()], 3),
         pagina_cat("Hogar", "Toallas bordadas y cojines para decorar y regalar", por_cat("Hogar"), 2, [tile_encargo()], 4),
         pagina_cat("Bisutería", "Aretes en crochet, chaquira y macramé", por_cat("Bisutería"), 3,
                    [tile_encargo(), tile_ig()], 5),
