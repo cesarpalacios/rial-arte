@@ -113,7 +113,7 @@ def footer(site, rel):
     ig = (f'<a href="{esc(site["instagram"])}" target="_blank" rel="noopener">Instagram</a>'
           if site.get("instagram") else "")
     return f"""<footer class="footer">
-  <img src="{rel}assets/logo.png" alt="Rial Arte" width="72" height="62">
+  <img src="{rel}assets/logo.png" alt="Rial Arte" width="130" height="112">
   <p class="footer-lema">{esc(site['lema'])}</p>
   <p class="footer-links"><a href="{wa_link(site)}" target="_blank" rel="noopener">WhatsApp {esc(site['whatsapp_visible'])}</a> {ig}</p>
   <p class="footer-small">© {esc(site['nombre'])} · Hecho a mano en {esc(site['ciudad'])}</p>
