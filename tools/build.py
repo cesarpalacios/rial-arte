@@ -163,6 +163,14 @@ def pagina_inicio(site, productos):
         "description": site["descripcion"], "url": site["url_base"],
         "image": site["url_base"] + "assets/logo.png",
         "telephone": "+" + site["whatsapp"]}, ensure_ascii=False)
+    vd = site.get("video")
+    video_html = ""
+    if vd:
+        video_html = (f'<section id="video" class="section video"><div class="section-head">'
+                      f'<p class="eyebrow">Video</p><h2>{esc(vd["titulo"])}</h2><p>{esc(vd["texto"])}</p></div>'
+                      f'<div class="video-wrap"><video controls playsinline preload="none" poster="{esc(vd["poster"])}">'
+                      f'<source src="{esc(vd["archivo"])}" type="video/mp4">Tu navegador no puede reproducir el video.'
+                      f'</video></div></section>')
     mo = site.get("momentos")
     momentos_html = ""
     if mo and mo.get("fotos"):
@@ -249,6 +257,7 @@ def pagina_inicio(site, productos):
   </div>
 </section>
 
+{video_html}
 {momentos_html}
 {redes_html}
 <section id="como-comprar" class="section como">
