@@ -337,6 +337,51 @@
     ]
   },
   {
+    "slug": "aretes-flor-lila-perla-crochet",
+    "nombre": "Aretes flor lila con perla",
+    "categoria": "Bisutería",
+    "resumen": "Topos de flor tejida en crochet, lila y blanco, con perla al centro.",
+    "descripcion": "Pequeñas flores tejidas a mano en crochet, en lila y blanco, con una perla en el centro. Tipo topo: discretos, delicados y fáciles de combinar.",
+    "detalles": [
+      "Tejidos a mano en crochet",
+      "Perla al centro",
+      "Tipo topo"
+    ],
+    "fotos": [
+      "aretes-flor-lila-perla"
+    ]
+  },
+  {
+    "slug": "aretes-flor-negra-perla-crochet",
+    "nombre": "Aretes flor negra con perla",
+    "categoria": "Bisutería",
+    "resumen": "Topos de flor tejida en crochet negro, con perla al centro.",
+    "descripcion": "Flores tejidas a mano en crochet negro con una perla blanca en el centro. Un contraste elegante que va con todo.",
+    "detalles": [
+      "Tejidos a mano en crochet",
+      "Perla al centro",
+      "Tipo topo"
+    ],
+    "fotos": [
+      "aretes-flor-negra-perla"
+    ]
+  },
+  {
+    "slug": "aretes-flor-azul-dorado-crochet",
+    "nombre": "Aretes flor azul con dorado",
+    "categoria": "Bisutería",
+    "resumen": "Aretes de flor azul cielo en crochet, con esfera dorada y detalle dorado al centro.",
+    "descripcion": "Flor azul cielo tejida a mano en crochet que cuelga de una esfera dorada, con un detalle dorado en el centro. Llamativos y livianos.",
+    "detalles": [
+      "Tejidos a mano en crochet",
+      "Esfera y detalle dorados",
+      "Colgantes"
+    ],
+    "fotos": [
+      "aretes-flor-azul-dorado"
+    ]
+  },
+  {
     "slug": "cojin-calado-crochet-blanco",
     "nombre": "Cojín calado en crochet blanco",
     "categoria": "Hogar",
