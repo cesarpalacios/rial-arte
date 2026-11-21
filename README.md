@@ -37,5 +37,6 @@ cd docs && python3 -m http.server 8000   # http://localhost:8000
 - **GitHub Pages**: Settings → Pages → rama `main`, carpeta `/docs`.
 - **Catálogo PDF**: `python3 tools/catalogo.py` (requiere Google Chrome) genera `docs/catalogo-rial-arte.pdf`.
 - **QR y tarjeta de presentación**: `python3 tools/qr.py` genera `tarjeta/` (QR, imagen para el celular y PDF imprimible).
+- **Emblema sin cinta (solo símbolo)**: `python3 tools/emblema.py` genera `emblema/`. Catálogo como imágenes: `pdftoppm -r 200 -jpeg docs/catalogo-rial-arte.pdf pagina`.
 - **Vista previa aleatoria**: ver `worker/PUBLICAR.md`.
 - **Google Sites**: Insertar → Insertar con código/Insertar desde la Web → URL de GitHub Pages (ver guía en `GOOGLE-SITES.md`).
