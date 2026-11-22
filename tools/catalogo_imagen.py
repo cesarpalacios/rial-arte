@@ -35,6 +35,9 @@ ENTERO = {"abrigo-multicolor-con-capucha", "conjunto-de-bebe-tejido", "conejo-am
 
 def tile(p):
     f = DOCS / "assets" / "img" / f"{p['fotos'][0]}-l.jpg"
+    nueva = ROOT / "fotos-origen" / "feria" / f"{p['slug']}.jpg"   # foto nueva de la feria (tools/recortes_feria.py)
+    if nueva.exists():
+        f = nueva
     ajuste = "contain" if p["slug"] in ENTERO else "cover"
     return (f'<div class="t"><div class="ph"><img style="object-fit:{ajuste}" src="{f.as_uri()}" alt=""></div>'
             f'<div class="tx"><span>{esc(p["categoria"])}</span><b>{esc(p["nombre"])}</b></div></div>')
