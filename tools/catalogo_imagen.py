@@ -22,7 +22,7 @@ DOCS = ROOT / "docs"
 OUT = ROOT / "catalogo"
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 COLS, W = 5, 2400
-FOTO, ETQ, GAP, MARGEN = 400, 150, 36, 60
+FOTO, ETQ, GAP, MARGEN = 400, 175, 36, 60
 HEAD, FOOT = 400, 420
 
 site = json.loads((ROOT / "data" / "site.json").read_text(encoding="utf-8"))
@@ -50,9 +50,9 @@ def tile(p):
         f = nueva
     ajuste = "contain" if p["slug"] in ENTERO else "cover"
     precio = PRECIOS.get(p["nombre"])
-    badge = f'<div class="pr">{cop(precio)}</div>' if precio else ""
-    return (f'<div class="t"><div class="ph"><img style="object-fit:{ajuste}" src="{f.as_uri()}" alt="">{badge}</div>'
-            f'<div class="tx"><span>{esc(p["categoria"])}</span><b>{esc(p["nombre"])}</b></div></div>')
+    badge = f'<em class="pr">{cop(precio)}</em>' if precio else ""
+    return (f'<div class="t"><div class="ph"><img style="object-fit:{ajuste}" src="{f.as_uri()}" alt=""></div>'
+            f'<div class="tx"><div class="fila"><span>{esc(p["categoria"])}</span>{badge}</div><b>{esc(p["nombre"])}</b></div></div>')
 
 
 def main():
@@ -84,11 +84,12 @@ h1{{font-family:var(--serif);font-weight:600;font-size:150px;line-height:.95}}
 .sub2{{font-family:var(--serif);font-style:italic;font-size:54px;color:#c99a1c;margin-top:10px}}
 .grid{{display:grid;grid-template-columns:repeat({COLS},{ancho_t}px);gap:{GAP}px}}
 .t{{background:#fff;border-radius:34px;overflow:hidden;box-shadow:0 8px 26px rgba(31,42,90,.14);height:{FOTO + ETQ}px}}
-.ph{{height:{FOTO}px;background:#f1ece0;position:relative}}
-.pr{{position:absolute;right:18px;bottom:18px;background:var(--navy);color:#fff;font-weight:600;font-size:42px;padding:6px 26px;border-radius:40px;box-shadow:0 6px 16px rgba(0,0,0,.3);border:3px solid var(--gold)}}
+.ph{{height:{FOTO}px;background:#f1ece0}}
+.fila{{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}}
+.pr{{font-style:normal;font-weight:600;font-size:42px;white-space:nowrap;color:var(--navy);line-height:1}}
 .ph img{{width:100%;height:100%;display:block}}
 .tx{{height:{ETQ}px;padding:20px 26px;display:flex;flex-direction:column;justify-content:center}}
-.tx span{{align-self:flex-start;background:var(--gold-soft);color:#7a5a06;font-size:22px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 16px;border-radius:30px;margin-bottom:10px}}
+.tx span{{background:var(--gold-soft);color:#7a5a06;font-size:19px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:4px 13px;border-radius:30px;white-space:nowrap}}
 .tx b{{font-family:var(--serif);font-weight:600;font-size:38px;line-height:1.05}}
 .foot{{position:absolute;left:{MARGEN}px;right:{MARGEN}px;bottom:50px;height:{FOOT - 90}px;background:var(--navy);border-radius:44px;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 90px}}
 .foot h2{{font-family:var(--serif);font-weight:600;font-size:76px;line-height:1.05}}
