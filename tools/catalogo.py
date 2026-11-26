@@ -117,7 +117,7 @@ def main():
         pagina_cat("Hogar", "Toallas bordadas y cojines para decorar y regalar", por_cat("Hogar"), 2, [tile_encargo()], 4),
         pagina_cat("Bisutería", "Aretes en crochet, chaquira y macramé", por_cat("Bisutería")[:6], 3, [], 5),
         pagina_cat("Bisutería", "Aretes en crochet, chaquira y macramé (continuación)", por_cat("Bisutería")[6:], 3,
-                   [tile_encargo(), tile_ig()], 6),
+                   [tile_encargo()], 6),
         pagina_cat("Llaveros y accesorios", "Pequeños detalles para regalar", por_cat("Llaveros", "Accesorios"), 2,
                    [tile_ig()], 7),
     ]

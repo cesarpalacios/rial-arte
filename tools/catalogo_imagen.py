@@ -70,6 +70,15 @@ def main():
     ancho_t = (W - 2 * MARGEN - (COLS - 1) * GAP) // COLS
     alto = HEAD + filas * (FOTO + ETQ) + (filas - 1) * GAP + FOOT
     ig = site["instagram"].rstrip("/").split("/")[-1]
+    # casillas de relleno para completar la última fila de la cuadrícula
+    candidatas = [
+        ('gold', '¿Algo a tu medida?', 'Tejemos y bordamos por encargo. Cuéntanos tu idea.'),
+        ('navy', 'Síguela en Instagram', f'@{ig}'),
+        ('gold', 'Tallas y colores', 'Consúltalos por WhatsApp.'),
+        ('navy', 'Envíos', 'Precios unitarios en COP. No incluyen envío.' if PRECIOS else 'Se coordinan por WhatsApp.'),
+    ]
+    faltan = (-len(productos)) % COLS
+    relleno = ''.join(f'<div class="rl {c}"><b>{esc(t)}</b><span>{esc(x)}</span></div>' for c, t, x in candidatas[:faltan])
     doc = f"""<!doctype html><html lang="es"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -91,6 +100,12 @@ h1{{font-family:var(--serif);font-weight:600;font-size:150px;line-height:.95}}
 .tx{{height:{ETQ}px;padding:20px 26px;display:flex;flex-direction:column;justify-content:center}}
 .tx span{{background:var(--gold-soft);color:#7a5a06;font-size:19px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:4px 13px;border-radius:30px;white-space:nowrap}}
 .tx b{{font-family:var(--serif);font-weight:600;font-size:38px;line-height:1.05}}
+.rl{{border-radius:34px;height:{FOTO + ETQ}px;display:flex;flex-direction:column;justify-content:center;text-align:center;padding:30px;gap:14px}}
+.rl b{{font-family:var(--serif);font-weight:600;font-size:56px;line-height:1.05}}
+.rl span{{font-size:32px;line-height:1.35}}
+.rl.gold{{background:linear-gradient(135deg,var(--gold),var(--gold-soft));color:var(--navy)}}
+.rl.navy{{background:var(--navy);color:#fff}}
+.rl.navy b{{color:var(--gold)}}
 .foot{{position:absolute;left:{MARGEN}px;right:{MARGEN}px;bottom:50px;height:{FOOT - 90}px;background:var(--navy);border-radius:44px;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 90px}}
 .foot h2{{font-family:var(--serif);font-weight:600;font-size:76px;line-height:1.05}}
 .foot h2 em{{color:var(--gold)}}
@@ -103,7 +118,7 @@ h1{{font-family:var(--serif);font-weight:600;font-size:150px;line-height:.95}}
 </style></head><body>
 <div class="head"><img src="{(ROOT / 'emblema' / 'emblema-rial-arte-2000px-transparente.png').as_uri()}" alt="">
 <div><h1>Rial Arte</h1><div class="sub">TEJIDO · CROCHET · BORDADO · BISUTERÍA</div><div class="sub2">Catálogo de productos hechos a mano</div></div></div>
-<div class="grid">{''.join(tile(p) for p in productos)}</div>
+<div class="grid">{''.join(tile(p) for p in productos)}{relleno}</div>
 <div class="foot"><div><h2>Pídelo por <em>WhatsApp</em></h2>
 <p><b>{esc(site['whatsapp_visible'])}</b> · Instagram @{esc(ig)}<br>{esc(site['ciudad'])} · {esc(site['url_base'].replace('https://', ''))}</p>{nota}</div>
 <div class="qr"><img src="{(ROOT / 'tarjeta' / 'qr-rial-arte.png').as_uri()}" alt=""><small>Catálogo web</small></div></div>
