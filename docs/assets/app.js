@@ -58,3 +58,16 @@
   btn.addEventListener('click', iniciar);
   v.addEventListener('click', function () { if (!v.controls) iniciar(); });
 })();
+
+// Redimir tarjeta regalo: abre WhatsApp con el código escrito
+(function () {
+  var f = document.getElementById('redimir');
+  if (!f) return;
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var code = document.getElementById('codigo').value.trim().toUpperCase();
+    if (!code) return;
+    var msg = 'Hola, quiero redimir mi tarjeta regalo de Rial Arte. Código: ' + code + '. Me gustó este producto: ';
+    window.open('https://wa.me/' + f.dataset.wa + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+  });
+})();

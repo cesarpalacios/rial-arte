@@ -41,3 +41,13 @@ cd docs && python3 -m http.server 8000   # http://localhost:8000
 - **Catálogo en una sola imagen**: `python3 tools/catalogo_imagen.py` genera `catalogo/catalogo-imagen.jpg`.
 - **Vista previa aleatoria**: ver `worker/PUBLICAR.md`.
 - **Google Sites**: Insertar → Insertar con código/Insertar desde la Web → URL de GitHub Pages (ver guía en `GOOGLE-SITES.md`).
+
+## Tarjetas regalo
+Sección `#regalo` del sitio (valores en `data/site.json` → `tarjetas_regalo`, por defecto 10.000 / 15.000 / 20.000). Quien compra escribe por WhatsApp; **después de verificar el pago** se genera la tarjeta con código único:
+
+```bash
+python3 tools/tarjeta_regalo.py 15000 --para "María" --de "Carlos"   # crea la imagen y anota en el registro
+python3 tools/tarjeta_regalo.py --redimir RA-15-XXXX-XXXX            # al usarla: la marca como redimida
+python3 tools/tarjeta_regalo.py --estado                             # lista de tarjetas
+```
+Las tarjetas y el registro CSV quedan en Drive (`Emprendimiento Mama/Tarjetas regalo/`), nunca en el repo.

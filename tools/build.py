@@ -118,6 +118,7 @@ def header(site, rel):
   </a>
   <nav aria-label="Principal">
     <a href="{rel}index.html#catalogo">Catálogo</a>
+    <a href="{rel}index.html#regalo">Regalos</a>
     <a href="{rel}index.html#sobre-mi">Sobre mí</a>
     <a href="{rel}index.html#momentos">Momentos</a>
     <a href="{rel}index.html#redes">Redes</a>
@@ -154,6 +155,50 @@ def card(p, rel):
     <span class="card-cta">Ver detalles <b aria-hidden="true">→</b></span>
   </div>
 </a>"""
+
+
+def seccion_regalo(site):
+    montos = site.get("tarjetas_regalo", [10000, 15000, 20000])
+    cop = lambda n: "$" + f"{n:,}".replace(",", ".")
+    tarjetas = ""
+    for m in montos:
+        msg = (f"Hola, quiero comprar una tarjeta regalo de Rial Arte por {cop(m)} COP. "
+               f"¿Me indicas cómo pagar y cómo la recibe la persona?")
+        url = f"https://wa.me/{site['whatsapp']}?text={quote(msg)}"
+        tarjetas += f"""
+    <article class="gift">
+      <div class="gift-card" style="--tilt:{(montos.index(m) - 1) * 1.5}deg">
+        <span class="gift-shine" aria-hidden="true"></span>
+        <img class="gift-logo" src="assets/logo.png" alt="" width="64" height="55">
+        <p class="gift-tag">Tarjeta regalo</p>
+        <p class="gift-amount">{cop(m)}</p>
+        <p class="gift-brand">Rial Arte · hecho a mano</p>
+      </div>
+      <a class="btn btn-primary gift-buy" href="{url}" target="_blank" rel="noopener">{WA_ICON} Regalar {cop(m)}</a>
+    </article>"""
+    return f"""<section id="regalo" class="section regalo">
+  <div class="section-head">
+    <p class="eyebrow">Regala algo hecho a mano</p>
+    <h2>Tarjetas regalo</h2>
+    <p>Elige el valor, escríbenos y, cuando verifiquemos tu pago, te enviamos la tarjeta con su código único para que la regales por WhatsApp.</p>
+  </div>
+  <div class="gift-grid">{tarjetas}
+  </div>
+  <div class="gift-redeem">
+    <h3>¿Recibiste una tarjeta regalo?</h3>
+    <p>Escribe el código que aparece en tu tarjeta y cuéntanos qué te gustó. Lo validamos y descontamos el valor de tu compra.</p>
+    <form id="redimir" class="redeem-form" autocomplete="off" data-wa="{site['whatsapp']}">
+      <input id="codigo" name="codigo" placeholder="RA-15-XXXX-XXXX" maxlength="20" required aria-label="Código de la tarjeta regalo">
+      <button class="btn btn-primary" type="submit">{WA_ICON} Redimir por WhatsApp</button>
+    </form>
+  </div>
+  <ul class="gift-terms">
+    <li>Se entrega después de verificar el pago.</li>
+    <li>Cada código se usa una sola vez y se anula al redimirlo.</li>
+    <li>Vigencia de 6 meses desde la fecha de compra. No es canjeable por dinero.</li>
+    <li>Si el producto vale más, se paga la diferencia; si vale menos, queda el saldo anotado.</li>
+  </ul>
+</section>"""
 
 
 def pagina_inicio(site, productos):
@@ -279,6 +324,8 @@ def pagina_inicio(site, productos):
 {chr(10).join(card(p, rel) for p in productos)}
   </div>
 </section>
+
+{seccion_regalo(site)}
 
 <section id="sobre-mi" class="section sobre">
   <div class="sobre-foto">{foto_sm}</div>
